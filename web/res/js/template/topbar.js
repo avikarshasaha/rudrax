@@ -6,7 +6,10 @@
 
 utils.template.define('topbar',function(topbar){
     topbar.onload = function(){
-      console.log("---",this.$div);  
+      console.log("---",this.$div);
+      $('.HELPLINK',this.$div).click(function(){
+          alert('hi');
+      });
     };
 })
 

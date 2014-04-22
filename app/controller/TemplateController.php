@@ -5,9 +5,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-include_once(R_PATH."/AbstractTemplateController.php");
+include_once(R_PATH."/AbstractController.php");
 
-class TemplateController extends AbstractTemplateController {
+class TemplateController extends AbstractController {
 
    public function getHandlerPath() {
         return "";

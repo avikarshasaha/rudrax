@@ -1,0 +1,310 @@
+.rfq.widget .cl {
+	clear: both;
+}
+
+.rfq.widget .dn {
+	display: none !important;
+}
+
+.rfq.widget .dead * {
+	display: none !important;
+}
+
+.tag.dropdown.posFixed .dropdown_menu {
+	position: fixed !important;
+}
+
+/*Calendar Css Start here*/
+div.datepicker {
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	width: 196px;
+	height: 147px;
+	position: absolute;
+	cursor: default;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+.datepickerContainer {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.datepickerBorderT {
+	position: absolute;
+	left: 10px;
+	top: 0;
+	right: 10px;
+	height: 10px;
+}
+
+.datepickerBorderB {
+	position: absolute;
+	left: 10px;
+	bottom: 0;
+	right: 10px;
+	height: 10px;
+}
+
+.datepickerBorderL {
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+	top: 10px;
+	width: 10px;
+}
+
+.datepickerBorderR {
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	top: 10px;
+	width: 10px;
+}
+
+.datepickerBorderTL {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 10px;
+}
+
+.datepickerBorderTR {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 10px;
+	height: 10px;
+}
+
+.datepickerBorderBL {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 10px;
+	height: 10px;
+}
+
+.datepickerBorderBR {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 10px;
+	height: 10px;
+}
+
+.datepickerHidden {
+	display: none;
+}
+
+div.datepicker table {
+	border-collapse: collapse;
+}
+
+div.datepicker a {
+	text-decoration: none;
+	cursor: default;
+	outline: none;
+}
+
+div.datepicker table td {
+	text-align: right;
+	padding: 0;
+	margin: 0;
+}
+
+div.datepicker th {
+	text-align: right;
+	font-weight: normal;
+}
+
+div.datepicker tbody th {
+	text-align: right;
+}
+
+div.datepicker tbody a {
+	display: block;
+}
+
+.datepickerDays a {
+	width: 20px;
+	line-height: 16px;
+	height: 16px;
+	padding-right: 2px;
+}
+
+.datepickerYears a,.datepickerMonths a {
+	width: 39px;
+	line-height: 36px;
+	height: 36px;
+	text-align: center;
+}
+
+div.datepicker tbody th {
+	text-align: right;
+}
+
+.datepickerSpace div {
+	width: 20px;
+}
+
+.datepickerGoNext a,.datepickerGoPrev a,.datepickerMonth a {
+	text-align: center;
+	height: 20px;
+	line-height: 20px;
+}
+
+.datepickerGoNext a {
+	float: right;
+	width: 20px;
+}
+
+.datepickerGoPrev a {
+	float: left;
+	width: 20px;
+}
+
+table.datepickerViewDays tbody.datepickerMonths,table.datepickerViewDays tbody.datepickerYears
+	{
+	display: none;
+}
+
+table.datepickerViewMonths tbody.datepickerDays,table.datepickerViewMonths tbody.datepickerYears,table.datepickerViewMonths tr.datepickerDoW
+	{
+	display: none;
+}
+
+table.datepickerViewYears tbody.datepickerDays,table.datepickerViewYears tbody.datepickerMonths,table.datepickerViewYears tr.datepickerDoW
+	{
+	display: none;
+}
+
+/*Calendar CSS end here*/
+.rfq.widget .helpbox {
+	position: relative;
+}
+
+.rfq.widget .helpbox span {
+	position: absolute;
+	height: 22px;
+	line-height: 22px;
+	text-indent: 5px;
+	width: 100%;
+}
+
+.rfq.widget .helpbox span {
+	cursor: default;
+	font-family: Arial;
+	font-size: 11px;
+	overflow: hidden;
+	position: absolute;
+	z-index: 10004;
+}
+
+.rfq.widget .customGrid.headerFreeze.alignX .dataDiv {
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+
+.rfq.widget .customGrid.headerFreeze.alignX .dataDiv .customGridTable {
+	margin-left: -1px;
+}
+
+.rfq.widget .disabled {
+	opacity: 0.3;
+	filter: alpha(opacity = 30);
+	cursor: default !important;
+}
+
+.rfq.widget .radiousBox {
+	text-align: left;
+	width: 166px;
+	height: 50px;
+	overflow: hidden;
+	line-height: 30px;
+	position: absolute;
+	left: calc(50% -   83px);
+	left: -moz-calc(50% -   83px);
+	left: -webkit-calc(50% -   83px);
+	top: 40%;
+	padding: 10px 10px 10px 31px;
+	border-radius: 5px;
+}
+
+.rfq.widget .done .icon {
+	width: 17px;
+	display: block;
+	height: 22px;
+	position: absolute;
+	top: 10px;
+	left: 8px;
+}
+
+.rfq.widget .loading .icon {
+	width: 16px;
+	display: block;
+	height: 28px;
+	line-height: 28px;
+	position: absolute;
+	top: 10px;
+	left: 8px;
+}
+
+
+.dropdownCheckWedget {
+	position: absolute;
+	width: 114px;
+}
+.dropdownCheckWedget .checkBox {
+	height: 20px;
+	width: 100%;
+	line-height: 20px;
+	overflow: hidden;
+	position: relative;
+	line-height: 20px;
+	cursor: pointer;
+}
+
+.dropdownCheckWedget .checkBox input {
+	position: absolute;
+	left: 6px;
+	top: 3px;
+}
+
+.dropdownCheckWedget .checkBox span {
+	padding-left: 23px;
+}
+
+.dropdownCheckWedget .okButton {
+	padding: 0;
+	width:100%;
+	height:22px;
+	margin:5px auto;
+}
+.dropdownCheckWedget .okButton .button{
+	margin: 0 auto;
+	display: block !important;
+}
+.dropdownCheckWedget .prevent {
+	position: absolute;
+	left: -9px;
+	top: -6px;
+	width: 9px;
+	height: 6px;
+	display: block;
+}
+.dropdownCheckWedget .title{
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	display: block;
+}
+.tag.dropdown ul.isScroll li, .tag.toggleinput ul.isScroll li{
+	padding: 0 20px 0 5px!important;
+}

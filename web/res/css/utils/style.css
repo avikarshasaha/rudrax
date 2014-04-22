@@ -1,0 +1,22 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 5, 2014, 2:46:58 AM
+    Author     : Lalit
+*/
+
+div.tag{
+    border : 1px solid #f0ead8!important;
+    width : 130px!important;
+}
+div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag div.display{
+    background-color: #f0c040!important;
+    width : 130px!important;
+}
+div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag input.display{
+    background-color: #fafafa!important;
+    width : 130px!important;
+}
