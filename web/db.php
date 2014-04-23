@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-/* Add on 04-23-2014*/
+/* Add on 04-23-2014 By Avikarsha*/
 
  function Db_Connect($db_server, $db_user, $db_password)
 	{
