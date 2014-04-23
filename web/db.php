@@ -7,6 +7,14 @@
  */
 /* Add on 04-23-2014 By Avikarsha*/
 
+function connectDb() {
+	    // $link = mysql_connect("localhost", "eliphazi_temp", "t;k$~Qs(-5nO") or die("connection problem" . mysql_error());
+		// db con
+	    // mysql_select_db("eliphazi_template", $link);
+	    // echo "new one";
+	     return null;//$link;		
+}
+
  function Db_Connect($db_server, $db_user, $db_password)
 	{
 		global $link;
