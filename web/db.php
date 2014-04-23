@@ -6,13 +6,7 @@
  * and open the template in the editor.
  */
 
-/*function connectDb() {
-   // $link = mysql_connect("localhost", "eliphazi_temp", "t;k$~Qs(-5nO") or die("connection problem" . mysql_error());
-// db con
-   // mysql_select_db("eliphazi_template", $link);
-   // echo "new one";
-    return null;//$link;
-}*/
+
  function connect($address, $account, $pwd, $name) {
         $this->_dbHandle = @mysql_connect($address, $account, $pwd);
         if ($this->_dbHandle != 0) {
