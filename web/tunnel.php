@@ -13,14 +13,16 @@
  */
 define("BASE_PATH", dirname(__FILE__) );
 define("PROJECT_PATH", realpath(BASE_PATH . "/../"));
-define("R_PATH",PROJECT_PATH."/lib/rudra/");
-require_once R_PATH. "AbstractDb.php";
+define("R_PATH",PROJECT_PATH."/lib/rudra");
+require_once R_PATH. "/AbstractDb.php";
 require_once R_PATH . "/AbstractUserNotification.php";
 
 $GLOBALS['CONFIG'] = parse_ini_file("../rudrax.ini",true);
 
-$type = 'longpolling';
-if(isset($_REQUEST["type"])){
-    $type =     $_REQUEST["type"];
+echo $GLOBALS['CONFIG']['TUNNEL']['host'];
+
+$type = 'longpoll';
+if(isset($_REQUEST["@"])){
+    $type =     $_REQUEST["@"];
 }
 include_once ("/tunnel/".$type.".php");
