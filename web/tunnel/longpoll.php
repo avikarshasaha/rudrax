@@ -5,7 +5,7 @@
  * @copyright 2011, 2012 Dmitry Sheiko (http://dsheiko.com)
  * @license GNU
  */
-$model = new AbstractUserNotification(new AbstractDb(APP_PATH . "/App/config.php"));
+$model = new AbstractUserNotification(new AbstractDb($GLOBALS['CONFIG']['TUNNEL']));
 
 set_time_limit (600);
 date_default_timezone_set('Europe/Berlin');

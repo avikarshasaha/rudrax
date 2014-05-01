@@ -10,7 +10,7 @@ class AbstractUserNotification
    private $_db;
 
 
-   public function  __construct(Lib_Db $db)
+   public function  __construct(AbstractDb $db)
    {
         $this->_db = $db;
    }
