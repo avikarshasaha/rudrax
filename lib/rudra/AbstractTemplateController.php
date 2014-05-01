@@ -8,18 +8,9 @@
 include(LIB_PATH . "/smarty/Smarty.class.php");
 include_once("AbstractUser.php");
 
-class AbstractController {
+class AbstractTemplateController {
 
-    public $name;
     public static $myController;
-
-    public function setName($name) {
-        $this->name = $name;
-    }
-
-    public function getName() {
-        return $this->name;
-    }
 
     public function getHandlerPath() {
         return "";
@@ -29,9 +20,9 @@ class AbstractController {
         return "";
     }
 
-    public function invoke(AbstractUser $user) {
+    public function invoke(AbstractUser $user,$handlerName) {
         self::$myController = $this;
-        $this->invokeHandler($this->getName(),$user);
+        $this->invokeHandler($handlerName,$user);
     }
 
     public static function invokeHandler($handlerName,AbstractUser $user) {

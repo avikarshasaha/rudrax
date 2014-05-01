@@ -22,17 +22,19 @@ $dbCon = connectDb();
 
 function invokeController() {
     $controller;
-    $temp = "index";
-    $temp = 'index';
-    if (isset($_GET['t'])) {
-        $temp = $_GET['t'];
-    }
-    include_once("controller/TemplateController.php");
-    $controller = new TemplateController();
     global $user;
     $user = new User();
-    $controller->setName($temp);
-    $controller->invoke($user);
+   // if (isset($_GET['d'])) {
+        //
+   // } else {
+        $temp = "index";
+        if (isset($_GET['t']))
+            $temp = $_GET['t'];
+        include_once("controller/TemplateController.php");
+        $controller = new TemplateController();
+        //$controller->setName($temp);
+        $controller->invoke($user,$temp);
+    //}
 }
 
 function debug($msg) {

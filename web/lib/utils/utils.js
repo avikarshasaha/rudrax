@@ -59,7 +59,7 @@ window.utils = function(utils) {
             cb(win, retspace);
         return win;
     };
-    utils.selectNamespace = function(namespace, cb, map) {
+    utils.define = utils.selectNamespace = function(namespace, cb, map) {
         return this.selectObject(window, namespace, cb, map);
     };
     utils.queue = function(cb, lotSize, delay) {

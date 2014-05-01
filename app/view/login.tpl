@@ -1,6 +1,7 @@
+{config_load file="website.conf"}
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="{$website_context}res/css/newstyle.css" />
+        <link rel="stylesheet" type="text/css" href="{#webcontext#}res/css/newstyle.css" />
     </head>
 
     <body>
