@@ -5,7 +5,7 @@
  * @copyright 2011, 2012 Dmitry Sheiko (http://dsheiko.com)
  * @license GNU
  */
-$model = new AbstractUserNotification(new AbstractDb($GLOBALS['CONFIG']['TUNNEL']));
+$model = new AbstractUserNotification($TunnelDB);
 
 set_time_limit (600);
 date_default_timezone_set('Europe/Berlin');
@@ -13,7 +13,7 @@ date_default_timezone_set('Europe/Berlin');
 define("IDLE_TIME", 3); // 3 seconds idle
 
 
-$recipientUid = (int)$_REQUEST["recipientUid"];
+$recipientUid = (int)$_REQUEST["token"];
 $displayedNotificationNum = (int)$_REQUEST["displayedNotificationNum"];
 $secCount = 0;
 

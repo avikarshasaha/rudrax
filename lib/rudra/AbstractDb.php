@@ -122,12 +122,12 @@ class AbstractDb
      * @param mixed $bindingParamN
      * @return PDOStatement | false
      */
-    public function query()
+    public function query($sql)
     {
         $query = $this->_prepare(func_get_args());
         if (!($res = $this->_link->query($query))) {
             $arr = $this->_link->errorInfo();
-            Lib_Console::log("SQL Error: " . $sql . "  ({$arr[2]}) ");
+            Console::log("SQL Error: " . $sql . "  ({$arr[2]}) ");
         }
         return $res;
     }
