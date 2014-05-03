@@ -14,10 +14,14 @@ define('HANDLER_PATH', "../app/handler");
 define('DEBUG_ENABLED', TRUE);
 set_include_path(APP_PATH);
 
+require_once R_PATH . "/Console.php";
+$GLOBALS['CONFIG'] = parse_ini_file("../rudrax.ini",true);
 
-include_once("db.php");
+include_once(R_PATH."/AbstractDb.php");
 include_once("model/User.php");
-$dbCon = connectDb();
+//$dbCon = connectDb();
+
+$RDb = new AbstractDb($GLOBALS['CONFIG']['DB1']);
 
 function invokeController() {
     $controller;
