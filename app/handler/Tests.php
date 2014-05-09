@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-include_once(R_PATH . "/AbstractHandler.php");
+include_once(RUDRA . "/AbstractHandler.php");
 
 class Tests extends AbstractHandler {
 
