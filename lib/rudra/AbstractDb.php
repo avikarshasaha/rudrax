@@ -22,15 +22,16 @@ class AbstractDb
      * Connects to DB
      * @param string/array $configSrc
      */
-    private function _initDb($configSrc)
-    {
-        $configSrc = is_string($configSrc) ? $this->_loadData($configSrc) : (object)$configSrc;
-        $this->_link = new PDO(
-            "mysql:host={$configSrc->host};dbname={$configSrc->dbname}",
-            $configSrc->username,
-            $configSrc->password,
-            array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
-        );
+    private function _initDb($configSrc) {
+		$configSrc = is_string ( $configSrc ) ? $this->_loadData ( $configSrc ) : ( object ) $configSrc;
+		try {
+			$this->_link = new PDO ( "mysql:host={$configSrc->host};dbname={$configSrc->dbname}", $configSrc->username, $configSrc->password, array (
+					PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8" 
+			) );
+		} catch ( PDOException $e ) {
+			Console::log("Error!: " . $e->getMessage() . "<br/>");
+			die ();
+		}
     }
     /**
      * Load configuration data from the source code
@@ -169,5 +170,12 @@ class AbstractDb
     {
         return $this->_link->lastInsertId();
     }
-
+    /**
+     * Closes the PDO Connection
+     *
+     */
+    public function close()
+    {
+    	return $this->_link = null;
+    }
 }

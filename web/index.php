@@ -4,8 +4,7 @@
  */
 require_once ("../config.php");
 
-include_once (MODEL_PATH . "/User.php");
-
+global $RDb;
 $RDb = DBUtils::getDB ( 'DB1' );
 function invokeController() {
 	global $controller;
@@ -20,5 +19,5 @@ function invokeController() {
 	$controller->invoke ( $user, $temp );
 }
 invokeController ();
-// mysql_close($dbCon);
+$RDb->close();
 ?>
