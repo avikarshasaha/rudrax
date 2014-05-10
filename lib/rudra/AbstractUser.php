@@ -9,7 +9,7 @@
 /**
  * Description of User
  *
- * @author Lalit
+ * @author Lalit Tanwar
  */
 class AbstractUser {
 
@@ -44,7 +44,6 @@ class AbstractUser {
 
     public function auth($username, $passowrd) {
         if (strcmp($username, "admin") == 0) {
-            //debug("workng");
             setValid();
         }
     }
