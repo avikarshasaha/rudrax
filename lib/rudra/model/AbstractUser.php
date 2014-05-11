@@ -15,14 +15,16 @@ class AbstractUser {
 
     public $valid;
     public $uname;
+    public $uid;
 
     public function validate() {
-        if (isset($_SESSION['user']) && trim($_SESSION['user'])) {
+        if (isset($_SESSION['uid']) && trim($_SESSION['uid'])) {
             $this->valid = TRUE;
-            $this->uname = $_SESSION['user'];
+            $this->uid = $_SESSION['uid'];
         } else {
             $this->valid = FALSE;
             $this->uname = "Guest";
+            $this->uid = -1;
         }
     }
 
@@ -33,7 +35,8 @@ class AbstractUser {
     public function setValid() {
         $this->valid = TRUE;
         session_regenerate_id();
-        $_SESSION['user'] = $this->uname;
+        $_SESSION['uid'] = $this->uid;
+        $_SESSION['uname'] = $this->uname;
         session_write_close();
     }
 

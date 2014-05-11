@@ -1,5 +1,5 @@
 {config_load file="test.conf" section="setup"}
-{include file="header.tpl" title=foo}
+{include file="home/header.tpl" title=foo}
 <div id='topbar'></div>
 <PRE>
    <div style="float:left"><img src="/res/img/profile.jpg"/></div>
@@ -79,4 +79,4 @@ This is an example of the html_options function:
 </select>
 </form>
 
-{include file="footer.tpl"}
+{include file="home/footer.tpl"}

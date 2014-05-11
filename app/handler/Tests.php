@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-include_once(RUDRA . "/AbstractHandler.php");
+include_once(RUDRA . "/handler/AbstractHandler.php");
 
 class Tests extends AbstractHandler {
 

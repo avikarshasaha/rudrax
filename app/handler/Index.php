@@ -6,17 +6,21 @@
  * and open the template in the editor.
  */
 
-include_once(RUDRA . "/AbstractHandler.php");
+include_once(RUDRA . "/handler/AbstractHandler.php");
 
 class Index extends AbstractHandler {
 
     public function invokeHandler($tpl) {
-        if (isset($_POST['uname'])) {
+        if (isset($_REQUEST['uname'])) {
             $username = $_POST['uname'];
             $password = $_POST['pass'];
             $this->user->auth($username, $password);
         }
+
+        Console::log($this->user->getToken(),$username,$password);
         if ($this->user->isValid()) {
+        	$tpl->assign('token',$this->user->getToken());
+        	
             $tpl->assign('profile', $this->user->getProfile());
             
             $tpl->assign("Name", "Fred Irving Johnathan Bradley Peppergill", true);
@@ -31,7 +35,7 @@ class Index extends AbstractHandler {
             $tpl->assign("option_values", array("NY", "NE", "KS", "IA", "OK", "TX"));
             $tpl->assign("option_output", array("New York", "Nebraska", "Kansas", "Iowa", "Oklahoma", "Texas"));
             $tpl->assign("option_selected", "NE");
-            return "home";
+            return "home/home";
         } else {
             return "login";
         }

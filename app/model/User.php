@@ -13,13 +13,24 @@ include_once(RUDRA . "/model/AbstractUser.php");
  * @author Lalit Tanwar
  */
 class User extends AbstractUser {
-
+	
+	public function getToken(){
+		return $this->uid;
+	}
+	
     public function auth($username, $passowrd) {
-        if (strcmp($username, "admin") == 0) {
-            //debug("workng");
-            $this->uname = $username;
-            $this->setValid();
-        }
+    	global $RDb;
+    	$res =  $RDb->fetchAll(
+				"SELECT * FROM user WHERE username = '%s' AND password = '%s'", 
+						$username,$passowrd);
+		if(count($res)==0){
+			return false;
+		} else {
+			$this->uname = $username;
+			$this->uid  = $res[0]->id;
+			$this->setValid();
+			return true;
+		}
     }
 
     public function getProfile() {

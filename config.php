@@ -14,7 +14,7 @@ ini_set ( 'error_reporting', E_ALL );
 error_reporting(E_ALL);
 
 
-$GLOBALS ['CONFIG'] = parse_ini_file ( "config.ini", true );
+$GLOBALS ['CONFIG'] = parse_ini_file ( "project.conf", true );
 set_include_path ($GLOBALS['CONFIG']['WORK_DIR']);
 define("BASE_PATH", dirname(__FILE__) );
 define("LOG_PATH", $GLOBALS ['CONFIG']['LOG_PATH']);
