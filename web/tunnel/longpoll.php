@@ -1,11 +1,12 @@
 <?php
-/*
- * @category Sample
- * @package Test Suit
- * @copyright 2011, 2012 Dmitry Sheiko (http://dsheiko.com)
- * @license GNU
- */
-$model = new AbstractUserNotification($TunnelDB);
+
+if (file_exists ( get_include_path () . CONTROLLER_PATH . "/UserNotification.php" )) {
+	include_once (CONTROLLER_PATH . "/UserNotification.php");
+} else {
+	include_once (RUDRA . "/AbstractUserNotificationDefault.php");
+}
+
+$model = new UserNotification($TunnelDB);
 
 set_time_limit (600);
 date_default_timezone_set('Europe/Berlin');

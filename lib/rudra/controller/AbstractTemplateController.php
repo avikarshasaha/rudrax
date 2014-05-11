@@ -5,34 +5,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-include(LIB_PATH . "/smarty/Smarty.class.php");
-include_once("AbstractUser.php");
+include_once(LIB_PATH . "/smarty/Smarty.class.php");
+include_once(RUDRA . "/controller/AbstractController.php");
 
-class AbstractTemplateController {
-	public static $myController;
+class AbstractTemplateController extends AbstractController {
+
 	public function getHandlerPath() {
 		return "";
 	}
 	public function getViewPath() {
 		return "";
 	}
-	public static function preRequest($handlerName, AbstractUser $user) {
-		return true;
-	}
-	public static function postRequest($handlerName, AbstractUser $user) {
-		return true;
-	}
-	public function invoke(AbstractUser $user, $handlerName) {
-		self::$myController = $this;
-		if (self::$myController->preRequest ( $handlerName, $user )) {
-			$this->invokeHandler ( $handlerName, $user );
-			self::$myController->postRequest ( $handlerName, $user );
-		}
-	}
-	public static function invokeHandler($handlerName, AbstractUser $user) {
+	public function invokeHandler($handlerName, AbstractUser $user) {
 		$className = ucfirst ( $handlerName );
 		$user->validate ();
-		include_once (HANDLER_PATH . "/" . self::$myController->getHandlerPath () . $className . ".php");
+		include_once (HANDLER_PATH . "/" . $this->getHandlerPath () . $className . ".php");
 		$tempClass = new ReflectionClass ( $className );
 		global $temp;
 		if ($tempClass->isInstantiable ()) {
@@ -55,13 +42,13 @@ class AbstractTemplateController {
 				if (! isset ( $view )) {
 					$view = $handlerName;
 				}
-				$tpl->display ( self::$myController->getViewPath () . $view . $GLOBALS ['CONFIG'] ['TEMP_EXT'] );
+				$tpl->display ( $this->getViewPath () . $view . $GLOBALS ['CONFIG'] ['TEMP_EXT'] );
 			} else if ($tempClass->hasMethod ( "invoke" )) {
 				$view = $temp->invoke ();
 				if (! isset ( $view )) {
 					$view = $handlerName;
 				}
-				include self::$myController->getViewPath () . $view . '.php';
+				include  $this->getViewPath () . $view . '.php';
 			}
 		}
 	}

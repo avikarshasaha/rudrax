@@ -29,8 +29,8 @@ class AbstractDb
 					PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8" 
 			) );
 		} catch ( PDOException $e ) {
-			Console::log("Error!: " . $e->getMessage() . "<br/>");
-			die ();
+			Console::exception($e);
+			//die ();
 		}
     }
     /**

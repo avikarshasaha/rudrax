@@ -1,0 +1,16 @@
+/lib/rudra/db/AbstractDb.php : 131 >
+##################################################################
+SQL Error: INSERT INTO token (`sessionId`, `tokenId`) VALUES ('d6q7curqdaoolb3hjd10cicmt1', '0')  (Duplicate entry 'd6q7curqdaoolb3hjd10cicmt1-0' for key 'PRIMARY') 
+##################################################################
+/lib/rudra/db/AbstractDb.php : 131 >
+##################################################################
+SQL Error: INSERT INTO token (`sessionId`, `tokenId`) VALUES ('d6q7curqdaoolb3hjd10cicmt1', '0')  (Duplicate entry 'd6q7curqdaoolb3hjd10cicmt1-0' for key 'PRIMARY') 
+##################################################################
+/lib/rudra/db/AbstractDb.php : 131 >
+##################################################################
+SQL Error: INSERT INTO token (`sessionId`, `tokenId`) VALUES ('d6q7curqdaoolb3hjd10cicmt1', '0')  (Duplicate entry 'd6q7curqdaoolb3hjd10cicmt1-0' for key 'sessionId') 
+##################################################################
+/lib/rudra/db/AbstractDb.php : 131 >
+##################################################################
+SQL Error: INSERT INTO token (`sessionId`, `tokenId`) VALUES ('d6q7curqdaoolb3hjd10cicmt1', '0')  (Duplicate entry 'd6q7curqdaoolb3hjd10cicmt1-0' for key 'sessionId') 
+##################################################################

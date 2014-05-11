@@ -30,7 +30,7 @@ utils.define('utils.tunnel', function(tunnel) {
     };
 
     $(document).ready(function(){
-        console.log('tunnel.start');
-         tunnel.longPoll('utils.tunnel._onOpen_','handshake');
+    	console.log('tunnel.starting...');
+    	tunnel.longPoll('utils.tunnel._onOpen_','handshake');
     });
 });

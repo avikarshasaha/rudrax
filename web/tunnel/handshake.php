@@ -10,8 +10,9 @@
 
 function processExecute(AbstractDb $TunnelDB){
     $token = $_REQUEST['token'];
-    $TunnelDB->update("INSERT INTO"
+    $TunnelDB->update("REPLACE INTO"
            . " token (`sessionId`, `tokenId`) VALUES ('%s', '%s')",$_COOKIE['PHPSESSID'],$token);
-   printf('%s({"time" : "%s", cookie : "%s"});',
-           $_REQUEST["callback"], date('d/m H:i:s'),$_COOKIE['PHPSESSID']);
+    
+   printf('%s({"time" : "%s", cookie : "%s",connectionId : "%s"});',
+           $_REQUEST["callback"], date('d/m H:i:s'),$_COOKIE['PHPSESSID'],$TunnelDB->lastInsertId());
 }

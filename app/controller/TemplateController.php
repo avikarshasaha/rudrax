@@ -6,7 +6,7 @@
  * and open the template in the editor.
  * 
  */
-include_once(RUDRA."/AbstractTemplateController.php");
+include_once(RUDRA."/controller/AbstractTemplateController.php");
 
 class TemplateController extends AbstractTemplateController {
 
