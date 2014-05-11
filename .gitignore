@@ -50,5 +50,6 @@ obj
 # Other Files #
 ###############
 app/cache/*
-app/temp/*
+app/temp/*.php
+app/logs/*
 *~
