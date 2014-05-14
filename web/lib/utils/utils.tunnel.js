@@ -18,7 +18,7 @@ utils.define('utils.tunnel', function(tunnel) {
     		}
     		this.time = resp.time;
     	} catch(e){
-    		console.error('error while processing lpoll response',e)
+    		console.error('error while processing lpoll response',e);
     	} finally {
     		tunnel.longPoll('utils.tunnel._onMessage_');    		
     	}
