@@ -1,10 +1,10 @@
 <?php
 /*
  * @category Sample
- * @package Test Suit
- * @copyright 2011, 2012 Dmitry Sheiko (http://dsheiko.com)
- * @license GNU
- */
+* @package Test Suit
+* @copyright 2011, 2012 Dmitry Sheiko (http://dsheiko.com)
+* @license GNU
+*/
 define("BASE_PATH", dirname(__FILE__) );
 define("APP_PATH", realpath(BASE_PATH . "/../"));
 require_once APP_PATH . "/App/Lib/Db.php";
@@ -15,14 +15,14 @@ define('RECIPIENT_UID', 1);
 define('EVENT_ID', 1);
 
 if ($_SERVER['REQUEST_METHOD'] =='POST' && isset ($_POST['action'])) {
-    switch ($_POST['action']) {
-        case "send":
-            $model->add(RECIPIENT_UID, EVENT_ID);
-            break;
-        case "cleanup":
-            $model->removeAll(RECIPIENT_UID);
-            break;
-    }
+	switch ($_POST['action']) {
+		case "send":
+			$model->add(RECIPIENT_UID, EVENT_ID);
+			break;
+		case "cleanup":
+			$model->removeAll(RECIPIENT_UID);
+			break;
+	}
 }
 ?>
 <!DOCTYPE html>
@@ -30,22 +30,33 @@ if ($_SERVER['REQUEST_METHOD'] =='POST' && isset ($_POST['action'])) {
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Index Demo</title>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 </head>
 <body>
-    <p>Examples</p>
-    <dl>
-        <dt><a href="./longpolling/">Long-polling</a></dt>
-        <dt><a href="./sse/">Server-Sent Events</a></dt>
-    </dl>
-    <fieldset>
-        <legend>Invokation tool for Long-polling/SSE examples</legend>
-        <p>Status: <var id="status"></var></p>
-        <button name="send">Send new notification to user <?= RECIPIENT_UID ?></button>
-        <button name="cleanup">Clean up user notifications</button>
-    </fieldset>
+	<p>Examples</p>
+	<dl>
+		<dt>
+			<a href="./longpolling/">Long-polling</a>
+		</dt>
+		<dt>
+			<a href="./sse/">Server-Sent Events</a>
+		</dt>
+	</dl>
+	<fieldset>
+		<legend>Invokation tool for Long-polling/SSE examples</legend>
+		<p>
+			Status:
+			<var id="status"></var>
+		</p>
+		<button name="send">
+			Send new notification to user
+			<?= RECIPIENT_UID ?>
+		</button>
+		<button name="cleanup">Clean up user notifications</button>
+	</fieldset>
 
-<script type="text/javascript">
+	<script type="text/javascript">
 
 (function( $ ) {
 

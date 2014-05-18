@@ -1,10 +1,10 @@
 <?php
 /*
  * @category Sample
- * @package Test Suit
- * @copyright 2011, 2012 Dmitry Sheiko (http://dsheiko.com)
- * @license GNU
- */
+* @package Test Suit
+* @copyright 2011, 2012 Dmitry Sheiko (http://dsheiko.com)
+* @license GNU
+*/
 
 $recipientUid = rand(1,1000);
 ?>
@@ -13,16 +13,22 @@ $recipientUid = rand(1,1000);
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>WebSockets Demo</title>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type="text/javascript" src="./js/jquery.json.min.js"></script>
 <script type="text/javascript" src="./js/jquery.realtime.js"></script>
 </head>
 <body>
-    <p>Recipient id: <?= $recipientUid ?></p>
-    <p>Notification: <span id="display"></span></p>
-    <button id="test">Fire an event</button>
+	<p>
+		Recipient id:
+		<?= $recipientUid ?>
+	</p>
+	<p>
+		Notification: <span id="display"></span>
+	</p>
+	<button id="test">Fire an event</button>
 
-<script>
+	<script>
     realtime = new realtimeComm(window.location.host + ":20001");
     realtime.addListener('/notification/updates', function(response) {
 	    $('#display').html('Client #' + response.data.recipientUid + ' broadcast an action #' + response.data.actionId);

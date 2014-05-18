@@ -7,267 +7,284 @@ and open the template in the editor.
     Created on : Apr 5, 2014, 2:41:34 AM
     Author     : Lalit
 */
-
-div.tag[fieldtype]{
-    width: 100%;
-    height: 22px !important;
-    line-height: 20px;
-    min-width: 22px;
-    position: relative;
+div.tag[fieldtype] {
+	width: 100%;
+	height: 22px !important;
+	line-height: 20px;
+	min-width: 22px;
+	position: relative;
 }
+
 div.tag[fieldtype].tokeninput {
-    height: auto !important;
-    min-height:22px !important;
-}
-div.tag[fieldtype].disabled {
-    opacity: 0.3 !important;
-    filter: alphaalpha(opacity =   30) !important;
+	height: auto !important;
+	min-height: 22px !important;
 }
 
-div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype].readOnly div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype].amount_toggle, div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype].readOnly .downArrow,div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype].readOnly+div.xtoggle,div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype].readOnly .calendar_btn
-{
-    opacity: 0.3 !important;
-    filter: alphaalpha(opacity =   30) !important;
-    cursor: default;
+div.tag[fieldtype].disabled {
+	opacity: 0.3 !important;
+	filter: alphaalpha(opacity =   30) !important;
+}
+
+div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype].readOnly div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype].amount_toggle,div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype].readOnly .downArrow,div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype].readOnly+div.xtoggle,div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype].readOnly .calendar_btn
+	{
+	opacity: 0.3 !important;
+	filter: alphaalpha(opacity =   30) !important;
+	cursor: default;
 }
 
 div.tag.tag[fieldtype]:focus .input.display {
-    border: 0 !important;
+	border: 0 !important;
 }
 
 div.tag[fieldtype],div.tag[fieldtype] *,.tagwrapper,.tagwrapper * {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    text-align :left;
-    text-overflow: clip;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	text-overflow: clip;
 }
 
 div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype] * {
-    border: 0 !important;
+	border: 0 !important;
 }
 
 div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype] div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype].amount_toggle,div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype] .downArrow,div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype]+div.xtoggle,div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype] .calendar_btn,div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype] .dropdownArrow
-{
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    display: inline-block;
-    height: 20px !important;
-    width: 22px;
-    text-decoration: none;
-    font-size: 9px !important;
-    z-index: 0;
-    outline: 0;
-    line-height: 20px;
-    cursor: pointer;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+	{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	display: inline-block;
+	height: 20px !important;
+	width: 22px;
+	text-decoration: none;
+	font-size: 9px !important;
+	z-index: 0;
+	outline: 0;
+	line-height: 20px;
+	cursor: pointer;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
+
 div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype].noIcon div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype].amount_toggle,div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype].noIcon .downArrow,div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype].noIcon+div.xtoggle,div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype].noIcon .calendar_btn
-{
-    display: none;
+	{
+	display: none;
 }
 
 div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype] div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype].amount_toggle *,div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype] .downArrow *,div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype]+div.xtoggle *,div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype] .calendar_btn *
-{
-    line-height: 20px !important;
-    height: 100% !important;
-    width: 100% !important;
-    font-size: 8px !important;
-    display: block;
-    text-align: center !important;
-    background: none !important;
-    margin: 0!important;
-    padding: 0!important;
-    text-indent: 0 !important;
+	{
+	line-height: 20px !important;
+	height: 100% !important;
+	width: 100% !important;
+	font-size: 8px !important;
+	display: block;
+	text-align: center !important;
+	background: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	text-indent: 0 !important;
 }
 
 .tagwrapper div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype] div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype],.tagwrapper div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype] .downArrow,.tagwrapper div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype]+div.xtoggle,.tagwrapperdiv.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[fieldtype] .calendar_btn
-{
-    right: 1px !important;
-    top: 1px !important;
+	{
+	right: 1px !important;
+	top: 1px !important;
 }
 
-div.tag.inputbox .input.display, div.tag.toggleinput.noIcon .input.display,div.tag.dropdown.noIcon  .input.display.display,div.tag.amount_toggle.noIcon .input.display.display,div.tag.dropdown.noIcon  .input.display.display,div.tag.amount.noIcon  .input.display.display,div.tag.date.noIcon  .input.display.display {
-    width: 100% !important;
-    height: inherit !important;
-    border: 0 !important;
-    background: none !important;
-    line-height: inherit;
-    text-indent: 5px;
-    overflow: hidden !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    white-space: nowrap;
-    text-overflow: clip;
+div.tag.inputbox .input.display,div.tag.toggleinput.noIcon .input.display,div.tag.dropdown.noIcon  .input.display.display,div.tag.amount_toggle.noIcon .input.display.display,div.tag.dropdown.noIcon  .input.display.display,div.tag.amount.noIcon  .input.display.display,div.tag.date.noIcon  .input.display.display
+	{
+	width: 100% !important;
+	height: inherit !important;
+	border: 0 !important;
+	background: none !important;
+	line-height: inherit;
+	text-indent: 5px;
+	overflow: hidden !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	white-space: nowrap;
+	text-overflow: clip;
 }
 
-div.tag.toggleinput .input.display, div.tag.dropdown .input.display.display, div.tag.amount_toggle .input.display.display, div.tag.dropdown  .input.display.display, div.tag.amount  .input.display.display,div.tag.date  .input.display.display
-{
-    width: calc(100% -       22px) !important;
-    width: -moz-calc(100% -       22px) !important;
-    width: -webkit-calc(100% -       22px) !important;
-    height: inherit !important;
-    line-height: inherit !important;
-    border: 0 !important;
-    background: none !important;
-    text-indent: 5px;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-    white-space: nowrap;
-    text-overflow: clip;
+div.tag.toggleinput .input.display,div.tag.dropdown .input.display.display,div.tag.amount_toggle .input.display.display,div.tag.dropdown  .input.display.display,div.tag.amount  .input.display.display,div.tag.date  .input.display.display
+	{
+	width: calc(100% -       22px) !important;
+	width: -moz-calc(100% -       22px) !important;
+	width: -webkit-calc(100% -       22px) !important;
+	height: inherit !important;
+	line-height: inherit !important;
+	border: 0 !important;
+	background: none !important;
+	text-indent: 5px;
+	margin: 0 !important;
+	padding: 0 !important;
+	overflow: hidden !important;
+	white-space: nowrap;
+	text-overflow: clip;
 }
 
-div.tag.string .input.display
-{
-    width: calc(100% -       40px) !important;
-    width: -moz-calc(100% -       40px) !important;
-    width: -webkit-calc(100% -       40px) !important;
-    height: inherit !important;
-    line-height: inherit !important;
-    border: 0 !important;
-    background: none !important;
-    text-indent: 5px;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden;
-    white-space: nowrap;
+div.tag.string .input.display {
+	width: calc(100% -       40px) !important;
+	width: -moz-calc(100% -       40px) !important;
+	width: -webkit-calc(100% -       40px) !important;
+	height: inherit !important;
+	line-height: inherit !important;
+	border: 0 !important;
+	background: none !important;
+	text-indent: 5px;
+	margin: 0 !important;
+	padding: 0 !important;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 /*dropdown start here*/
 .tag.dropdown ul,.tag.toggleinput ul {
-    position: absolute;
-    width: auto;
-    top: 23px;
-    margin: 0px;
-    padding: 0px;
-    list-style-type: none;
-    /* float so we can calculate the size of the columns */
-    float: left;
-    clear: both;
-    z-index: 1000000000 !important;
-    white-space: nowrap;
-    min-width: 100%;
-    width: auto;
+	position: absolute;
+	width: auto;
+	top: 23px;
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	/* float so we can calculate the size of the columns */
+	float: left;
+	clear: both;
+	z-index: 1000000000 !important;
+	white-space: nowrap;
+	min-width: 100%;
+	width: auto;
 }
-div.tag.dropdown[fieldtype],div.tag.dropdown[fieldtype] *{
-    text-overflow: clip !important;
 
+div.tag.dropdown[fieldtype],div.tag.dropdown[fieldtype] * {
+	text-overflow: clip !important;
 }
-.tag.tag.dropdown.menu_open .dropdown_menu{
-    display: block!important;
+
+.tag.tag.dropdown.menu_open .dropdown_menu {
+	display: block !important;
 }
+
 .tag.tag.dropdown ul li,.tag.tag.toggleinput ul li,.tag.tag.multiselect ul li
-{
-    list-style: none;
-    line-height: 19px;
-    height: 20px;
-    padding: 0 5px 0 0;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    min-width: 50px;
-    cursor: pointer;
-    position: relative;
-    width: 100% !important;
-    border: 0;
-    text-indent: 5px;
+	{
+	list-style: none;
+	line-height: 19px;
+	height: 20px;
+	padding: 0 5px 0 0;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	min-width: 50px;
+	cursor: pointer;
+	position: relative;
+	width: 100% !important;
+	border: 0;
+	text-indent: 5px;
 }
-.tag.tag.dropdown ul li.disabled{
-    display: none!important;
+
+.tag.tag.dropdown ul li.disabled {
+	display: none !important;
 }
 
 .tag.dropdown ul li.subMenu {
-    padding: 0 15px 0 0;
-    height: 20px;
+	padding: 0 15px 0 0;
+	height: 20px;
 }
 
 .tag.dropdown ul li:hover>ul,.tag.dropdown ul li.hover>ul,.tag.dropdown ul li.phover>ul
-{
-    display: block;
-    position: absolute;
-    left: 100%;
-    top: 0px;
+	{
+	display: block;
+	position: absolute;
+	left: 100%;
+	top: 0px;
 }
 
 .tag.dropdown ul li.focus>ul,.tag.dropdown ul li.pfocus>ul {
-    display: block;
-    position: absolute;
-    left: 108px;
-    top: 0px;
+	display: block;
+	position: absolute;
+	left: 108px;
+	top: 0px;
 }
 
 .tag.dropdown ul li ul {
-    display: none;
-    position: absolute;
+	display: none;
+	position: absolute;
 }
 
 .tag.dropdown ul.upSide,.tag.toggleinput ul.upSide {
-    top: auto !important;
-    bottom: 24px;
+	top: auto !important;
+	bottom: 24px;
 }
 
 .tag.dropdown .subMenu ul.upSide,.tag.toggleinput .subMenu ul.upSide {
-    top: auto !important;
-    bottom: 0 !important;
+	top: auto !important;
+	bottom: 0 !important;
 }
 
 .tag.dropdown ul.isScroll,.tag.toggleinput ul.isScroll {
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
 }
-.tag.dropdown ul.isScroll li,.tag.toggleinput ul.isScroll li{
-    padding: 0 20px 0 0;
+
+.tag.dropdown ul.isScroll li,.tag.toggleinput ul.isScroll li {
+	padding: 0 20px 0 0;
 }
 /*dropdown end here*/
 
 /*toggle tag start here*/
-div.tag.tag.tag.tag.tag.tag.tag.tag.tag.toggle[fieldtype]{
-    cursor: pointer!important;
+div.tag.tag.tag.tag.tag.tag.tag.tag.tag.toggle[fieldtype] {
+	cursor: pointer !important;
 }
+
 div.tag.tag.tag.tag.tag.tag.tag.tag.tag.toggle[fieldtype] div.option {
-    width: 100%;
-    padding-right: 22px;
-    text-indent: 5px;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    overflow: hidden;;
-    white-space: nowrap;
+	width: 100%;
+	padding-right: 22px;
+	text-indent: 5px;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	overflow: hidden;;
+	white-space: nowrap;
 }
 /*toggle tag end here*/
+input.button.button.button[type="button"],button.button.button.button {
+	cursor: pointer;
+	display: inline-block;
+	font-size: 11px !important;
+	height: 21px !important;
+	line-height: 18px;
+	overflow: visible;
+	padding: 1px 4px 3px !important;
+	text-align: center;
+	border-radius: 3px;
+	padding: 0 6px 3px 6px\0 !important;
+}
 
-input.button.button.button[type="button"], button.button.button.button{
-    cursor: pointer;
-    display: inline-block;
-    font-size: 11px !important;
-    height: 21px !important;
-    line-height: 18px;
-    overflow: visible;
-    padding: 1px 4px 3px !important;
-    text-align: center;
-    border-radius:3px;
-    padding:0 6px 3px 6px \0 !important ;
+button.button.button.button {
+	line-height: 15px !important;
 }
-button.button.button.button{
-    line-height: 15px!important;
+
+table tr input.button.button.button[type="button"],table tr button.button.button.button
+	{
+	border-radius: 0px !important;
 }
-table tr input.button.button.button[type="button"], table tr button.button.button.button{
-    border-radius:0px !important;
+
+div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag input.display.input
+	{
+	display: none !important;
 }
-div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag input.display.input{
-    display: none!important;
+
+div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag div.display.input
+	{
+	display: block !important;
 }
-div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag div.display.input{
-    display: block!important;
+
+div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[mode="edit"] div.display.input
+	{
+	display: none !important;
 }
-div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[mode="edit"] div.display.input{
-    display: none!important;
-}
-div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[mode="edit"] input.display.input{
-    display: block!important;
+
+div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag[mode="edit"] input.display.input
+	{
+	display: block !important;
 }

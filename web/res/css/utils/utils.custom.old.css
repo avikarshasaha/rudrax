@@ -1,5 +1,3 @@
-
-
 /*Calendar Css Start here*/
 div.datepicker {
 	position: relative;
@@ -130,7 +128,6 @@ div.datepicker tbody a {
 	height: 36px;
 	text-align: center;
 }
-
 
 div.datepicker tbody th {
 	text-align: right;

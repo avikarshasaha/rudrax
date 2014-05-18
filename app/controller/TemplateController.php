@@ -2,12 +2,13 @@
 
 /*
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- * 
- */
-include_once(RUDRA."/controller/AbstractTemplateController.php");
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+*
+*/
 
 class TemplateController extends AbstractTemplateController {
-
+	public function testMethod($abc,$def){
+	 echo $abc . "   " .$def;
+	}
 }

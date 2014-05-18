@@ -6,15 +6,26 @@
 
 utils.define('utils.tunnel', function(tunnel) {
 
-    tunnel.token = window.token || (document.location.search.split('token=')[1] || '0').split('&')[0];
-    tunnel.counter = 0;
+    tunnel.token = '-1';
+    tunnel.counterEnd = 0;
+    tunnel.counterStart = 0;
+    tunnel.eventCounter = 0;
+    tunnel.started = false;
+    var eventMap = {};
+    tunnel.open = function(){
+    	if(tunnel.started) return false;
+    	else tunnel.longPoll('utils.tunnel._onOpen_','handshake');
+    };
     tunnel._onMessage_ = function(resp) {
     	try{
+    		this.counterStart = this.counterEnd;
     		this.counter = resp.counter;
     		for(var i in resp.data){
-    			this.counter = Math.max(this.counter,resp.data[i].id);
+    			this.counterEnd = Math.max(this.counterEnd,resp.data[i].id);
     			resp.data[i].data = utils.parse(resp.data[i].eData);
-    			console.log('tunnel.onMessage',this.counter,resp.data[i].data);
+    			
+    			
+    			console.log('tunnel.onMessage',this.counterEnd,resp.data[i].data);
     		}
     		this.time = resp.time;
     	} catch(e){
@@ -37,17 +48,45 @@ utils.define('utils.tunnel', function(tunnel) {
             type    : 'POST',
             dataType: 'jsonp',
             jsonpCallback: _cb_,
-            data: 'token=' + this.token + '&counter='
-                    + this.counter + '&data='+utils.stringify(data || {})
+            data: 'token=' + this.token +  '&counterStart=' +  this.counterStart + 
+            '&counterEnd=' +  this.counterEnd + 
+            '&counter=' + this.counter + 
+            '&data='+utils.stringify(data || {})
         });
     };
     
-    tunnel.send = function(eName, eData){
+    tunnel.sendLazy = function(eName, eData){
     	 return tunnel.longPoll('utils.tunnel._onMessage_','sendData',eData);
     };
-    
+    tunnel.triggerListener = function(eName, eData){
+    	eventMap[eName] = eventMap[eName] || [];
+    	for(var i in eventMap[eName]){
+        	eventMap[eName][i](listner);
+    	}
+    };
+    tunnel.addListener = function(eName, listner){
+    	tunnel.open();
+    	eventMap[eName] = eventMap[eName] || [];
+    	eventMap[eName].push({
+    		id : tunnel.eventCounter ,fun : listner
+    	});
+    	return tunnel.eventCounter++;
+    };
+    tunnel.removeListener = function (eName,listener) {
+    	eventMap[eName] = eventMap[eName] || [];
+    	if(listener){
+	    	eventMap[eName] = $.grep(eventMap[eName], function (value) {
+	          return !(value.fun == listener ||  value.id==listener);
+	        });
+    	} else {
+    		delete eventMap[eName];
+    	}
+    };
     $(document).ready(function(){
-    	console.log('tunnel.starting...');
-    	tunnel.longPoll('utils.tunnel._onOpen_','handshake');
+    	tunnel.token = window.token || (document.location.search.split('token=')[1] || '-1').split('&')[0];
+    	console.log('tunnel.starting...hmmmm');
+    	//tunnel.open();
     });
+    tunnel.sub = tunnel.addListener;
+    tunnel.unsub =  tunnel.removeListener;
 });

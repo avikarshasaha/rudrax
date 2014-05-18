@@ -3,8 +3,10 @@
 <HEAD>
 <TITLE>Rudrax</TITLE>
 
-<link rel="stylesheet" type="text/css" href="{#cssfolder#}/utils/utils.custom.css">
-<link rel="stylesheet" type="text/css" href="{#cssfolder#}/utils/style.css">
+<link rel="stylesheet" type="text/css"
+	href="{#cssfolder#}/utils/utils.custom.css">
+<link rel="stylesheet" type="text/css"
+	href="{#cssfolder#}/utils/style.css">
 <script src="{#jsfolder#}/jquery/jquery.js"></script>
 <script src="{#jsfolder#}/jquery/jquery.migrate.js"></script>
 <script src="{#jsfolder#}/utils/utils.js"></script>

@@ -9,8 +9,8 @@
 <script src="{#weblib#}/utils/utils.template.js"></script>
 <script src="{#weblib#}/utils/utils.tunnel.js"></script>
 <script src="{#jsfolder#}/product.js"></script>
+<script type="text/javascript">
+window.token = '{$token}';
+</script>
 </HEAD>
 <BODY bgcolor="#ffffff">
-<script type="text/javascript">
-window.token = {$token}
-</script>

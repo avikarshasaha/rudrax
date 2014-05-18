@@ -255,11 +255,11 @@ table.datepickerViewYears tbody.datepickerDays,table.datepickerViewYears tbody.d
 	left: 8px;
 }
 
-
 .dropdownCheckWedget {
 	position: absolute;
 	width: 114px;
 }
+
 .dropdownCheckWedget .checkBox {
 	height: 20px;
 	width: 100%;
@@ -282,14 +282,16 @@ table.datepickerViewYears tbody.datepickerDays,table.datepickerViewYears tbody.d
 
 .dropdownCheckWedget .okButton {
 	padding: 0;
-	width:100%;
-	height:22px;
-	margin:5px auto;
+	width: 100%;
+	height: 22px;
+	margin: 5px auto;
 }
-.dropdownCheckWedget .okButton .button{
+
+.dropdownCheckWedget .okButton .button {
 	margin: 0 auto;
 	display: block !important;
 }
+
 .dropdownCheckWedget .prevent {
 	position: absolute;
 	left: -9px;
@@ -298,13 +300,15 @@ table.datepickerViewYears tbody.datepickerDays,table.datepickerViewYears tbody.d
 	height: 6px;
 	display: block;
 }
-.dropdownCheckWedget .title{
+
+.dropdownCheckWedget .title {
 	width: 100%;
 	height: 20px;
 	line-height: 20px;
 	text-align: center;
 	display: block;
 }
-.tag.dropdown ul.isScroll li, .tag.toggleinput ul.isScroll li{
-	padding: 0 20px 0 5px!important;
+
+.tag.dropdown ul.isScroll li,.tag.toggleinput ul.isScroll li {
+	padding: 0 20px 0 5px !important;
 }

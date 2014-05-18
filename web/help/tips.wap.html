@@ -6,42 +6,58 @@
 <link rel="home" href="index.html" title="Smarty 3 Manual">
 <link rel="up" href="tips.html" title="Chapter 21. Tips &amp; Tricks">
 <link rel="prev" href="tips.dates.html" title="Dates">
-<link rel="next" href="tips.componentized.templates.html" title="Componentized Templates">
+<link rel="next" href="tips.componentized.templates.html"
+	title="Componentized Templates">
 </head>
-<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<div class="navheader">
-<table width="100%" summary="Navigation header">
-<tr><th colspan="3" align="center">WAP/WML</th></tr>
-<tr>
-<td width="20%" align="left">
-<a accesskey="p" href="tips.dates.html">Prev</a> </td>
-<th width="60%" align="center">Chapter 21. Tips &amp; Tricks</th>
-<td width="20%" align="right"> <a accesskey="n" href="tips.componentized.templates.html">Next</a>
-</td>
-</tr>
-</table>
-<hr>
-</div>
-<div class="sect1" title="WAP/WML">
-<div class="titlepage"><div><div><h2 class="title" style="clear: both">
-<a name="tips.wap"></a>WAP/WML</h2></div></div></div>
-<p>
-    WAP/WML templates require a php
-    <a class="ulink" href="http://php.net/header" target="_top">Content-Type header</a>
-    to be passed along
-    with the template. The easist way to do this would be to write a custom
-    function that prints the header. If you are using
-    <a class="link" href="caching.html" title="Chapter 15. Caching">caching</a>, that won't
-    work so we'll do it using the
-    <a class="link" href="language.function.insert.html" title="{insert}"><code class="varname">{insert}</code></a>
-    tag; remember <code class="varname">{insert}</code> tags are not
-    cached! Be sure that there is nothing output to the browser before the
-    template, or else the header may fail.
-   </p>
-<div class="example">
-<a name="id469060"></a><p class="title"><b>Example 21.6. Using {insert} to write a WML Content-Type header</b></p>
-<div class="example-contents">
-<pre class="programlisting">
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084"
+	alink="#0000FF">
+	<div class="navheader">
+		<table width="100%" summary="Navigation header">
+			<tr>
+				<th colspan="3" align="center">WAP/WML</th>
+			</tr>
+			<tr>
+				<td width="20%" align="left"><a accesskey="p"
+					href="tips.dates.html">Prev</a> </td>
+				<th width="60%" align="center">Chapter 21. Tips &amp; Tricks</th>
+				<td width="20%" align="right"> <a accesskey="n"
+					href="tips.componentized.templates.html">Next</a>
+				</td>
+			</tr>
+		</table>
+		<hr>
+	</div>
+	<div class="sect1" title="WAP/WML">
+		<div class="titlepage">
+			<div>
+				<div>
+					<h2 class="title" style="clear: both">
+						<a name="tips.wap"></a>WAP/WML
+					</h2>
+				</div>
+			</div>
+		</div>
+		<p>
+			WAP/WML templates require a php <a class="ulink"
+				href="http://php.net/header" target="_top">Content-Type header</a>
+			to be passed along with the template. The easist way to do this would
+			be to write a custom function that prints the header. If you are
+			using <a class="link" href="caching.html" title="Chapter 15. Caching">caching</a>,
+			that won't work so we'll do it using the <a class="link"
+				href="language.function.insert.html" title="{insert}"><code
+					class="varname">{insert}</code></a> tag; remember
+			<code class="varname">{insert}</code>
+			tags are not cached! Be sure that there is nothing output to the
+			browser before the template, or else the header may fail.
+		</p>
+		<div class="example">
+			<a name="id469060"></a>
+			<p class="title">
+				<b>Example 21.6. Using {insert} to write a WML Content-Type
+					header</b>
+			</p>
+			<div class="example-contents">
+				<pre class="programlisting">
 
 &lt;?php
 
@@ -60,10 +76,11 @@ function insert_header($params)
 ?&gt;
 
     </pre>
-<p>
-     your Smarty template <span class="emphasis"><em>must</em></span> begin with the insert tag :
-    </p>
-<pre class="programlisting">
+				<p>
+					your Smarty template <span class="emphasis"><em>must</em></span>
+					begin with the insert tag :
+				</p>
+				<pre class="programlisting">
 
 {insert name=header content="Content-Type: text/vnd.wap.wml"}
 
@@ -91,26 +108,30 @@ function insert_header($params)
 &lt;/wml&gt;
 
     </pre>
-</div>
-</div>
-<br class="example-break">
-</div>
-<div class="navfooter">
-<hr>
-<table width="100%" summary="Navigation footer">
-<tr>
-<td width="40%" align="left">
-<a accesskey="p" href="tips.dates.html">Prev</a> </td>
-<td width="20%" align="center"><a accesskey="u" href="tips.html">Up</a></td>
-<td width="40%" align="right"> <a accesskey="n" href="tips.componentized.templates.html">Next</a>
-</td>
-</tr>
-<tr>
-<td width="40%" align="left" valign="top">Dates </td>
-<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
-<td width="40%" align="right" valign="top"> Componentized Templates</td>
-</tr>
-</table>
-</div>
+			</div>
+		</div>
+		<br class="example-break">
+	</div>
+	<div class="navfooter">
+		<hr>
+		<table width="100%" summary="Navigation footer">
+			<tr>
+				<td width="40%" align="left"><a accesskey="p"
+					href="tips.dates.html">Prev</a> </td>
+				<td width="20%" align="center"><a accesskey="u"
+					href="tips.html">Up</a></td>
+				<td width="40%" align="right"> <a accesskey="n"
+					href="tips.componentized.templates.html">Next</a>
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" align="left" valign="top">Dates </td>
+				<td width="20%" align="center"><a accesskey="h"
+					href="index.html">Home</a></td>
+				<td width="40%" align="right" valign="top"> Componentized
+					Templates</td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>

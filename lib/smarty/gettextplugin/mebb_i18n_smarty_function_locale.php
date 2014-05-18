@@ -16,7 +16,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA *
  * ------------------------------------------------------------------------- *
  *
- * Installation: 
+ * Installation:
  * $smarty->registerPlugin('function', 'locale', '\\mebb\\app\\core\\web\\smarty\\functions\\locale');
  *
  * @package mebb-app-core-web-smarty-functions
@@ -31,27 +31,27 @@ namespace mebb\app\core\web\smarty\functions;
 $stack = array();
 
 function locale($params, &$smarty){
-  global $stack;
+	global $stack;
 
-  $path = (isset($params['path'])?str_replace( array( "'", '"' ), '', $params[ 'path' ] ):null); 
-  $domain = (isset($params['domain'])?str_replace(array( "'", '"' ), '', $params[ 'domain' ]):'messages'); 
-  $stack_operation = (isset($params['stack'])?str_replace(array( "'", '"' ), '', strtolower($params[ 'stack' ])):'push');
-  if($path == null && $stack_operation != 'pop') {
-    trigger_error( "static (file $smarty->_current_file): missing 'path' parameter.", E_USER_ERROR ); 
-  } 
+	$path = (isset($params['path'])?str_replace( array( "'", '"' ), '', $params[ 'path' ] ):null);
+	$domain = (isset($params['domain'])?str_replace(array( "'", '"' ), '', $params[ 'domain' ]):'messages');
+	$stack_operation = (isset($params['stack'])?str_replace(array( "'", '"' ), '', strtolower($params[ 'stack' ])):'push');
+	if($path == null && $stack_operation != 'pop') {
+		trigger_error( "static (file $smarty->_current_file): missing 'path' parameter.", E_USER_ERROR );
+	}
 
-  if($stack_operation == 'push'){
-    $stack[] = array($domain, $path);
-  }else if($stack_operation == 'pop'){
-    if(count($stack)>1){
-      array_pop($stack);
-    }
-    $definition = end($stack);
-    $domain = $definition[0];
-    $path = $definition[1];
-  }
-  bind_textdomain_codeset($domain, 'UTF-8');
-  bindtextdomain($domain, $path); 
-  textdomain($domain);
+	if($stack_operation == 'push'){
+		$stack[] = array($domain, $path);
+	}else if($stack_operation == 'pop'){
+		if(count($stack)>1){
+			array_pop($stack);
+		}
+		$definition = end($stack);
+		$domain = $definition[0];
+		$path = $definition[1];
+	}
+	bind_textdomain_codeset($domain, 'UTF-8');
+	bindtextdomain($domain, $path);
+	textdomain($domain);
 }
 ?>

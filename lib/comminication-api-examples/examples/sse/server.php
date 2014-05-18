@@ -1,10 +1,10 @@
 <?php
 /*
  * @category Sample
- * @package Test Suit
- * @copyright 2011, 2012 Dmitry Sheiko (http://dsheiko.com)
- * @license GNU
- */
+* @package Test Suit
+* @copyright 2011, 2012 Dmitry Sheiko (http://dsheiko.com)
+* @license GNU
+*/
 define("BASE_PATH", dirname(__FILE__) );
 define("APP_PATH", realpath(BASE_PATH . "/../../"));
 require_once APP_PATH . "/App/Lib/Db.php";
@@ -23,15 +23,15 @@ $recipientUid = (int)$_REQUEST["recipientUid"];
 
 function send($updatedNotificationNum)
 {
-    printf ("id: %s\n\n", PROC_ID);
-    printf ('data: {"time" : "%s", "updatedNotificationNum" : "%d"}' . "\n\n"
-        ,date('d/m H:i:s') , $updatedNotificationNum);
-    ob_flush();
-    flush();
+	printf ("id: %s\n\n", PROC_ID);
+	printf ('data: {"time" : "%s", "updatedNotificationNum" : "%d"}' . "\n\n"
+			,date('d/m H:i:s') , $updatedNotificationNum);
+			ob_flush();
+			flush();
 }
 
 while (true) {
-    send($model->fetchNumberByRecipientUid($recipientUid));
-    sleep(IDLE_TIME);
+	send($model->fetchNumberByRecipientUid($recipientUid));
+	sleep(IDLE_TIME);
 }
 gc_collect_cycles();

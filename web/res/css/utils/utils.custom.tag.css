@@ -1,12 +1,11 @@
-
-
 /************Tabs******************/
 article.tabs {
-/* 	overflow: hidden;
- */	position: relative;
+	/* 	overflow: hidden;
+ */
+	position: relative;
 	z-index: 1;
 	display: block;
-	padding: 2px 3px 0 3px!important;
+	padding: 2px 3px 0 3px !important;
 	width: -moz-calc(100% -     3px);
 	width: -webkit-calc(100% -     3px);
 	width: calc(100% -     3px);
@@ -19,23 +18,25 @@ article.tabs section {
 	float: left;
 	z-index: 1;
 }
+
 article.tabs section h3 {
-	margin: 0 0 0 -1px!important;
+	margin: 0 0 0 -1px !important;
 	padding: 0 10px !important;
 	font: bold 12px Arial;
 	cursor: hand;
 	cursor: pointer;
 	height: 20px;
 	line-height: 20px;
-	border-radius:2px;
+	border-radius: 2px;
 }
 
 article.tabs section.current h3 {
 	cursor: default;
-	position:relative;
-	font: bold 12px/22px Arial!important;
+	position: relative;
+	font: bold 12px/22px Arial !important;
 	z-index: 2;
 }
+
 article.tabs section div.tabContent {
 	position: absolute;
 	left: 2px;
@@ -55,35 +56,37 @@ article.tabs section.current div.tabContent {
 }
 /*********************Tab End********************/
 /******************Checkbox***********************/
-div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.checkbox[fieldtype]{
-	width: 15px!important;
-	min-width: 15px!important;
-	max-width: 15px!important;
-	height: 15px!important;
+div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.checkbox[fieldtype] {
+	width: 15px !important;
+	min-width: 15px !important;
+	max-width: 15px !important;
+	height: 15px !important;
 	margin: 0;
 	padding: 0;
 	display: block;
-	border: 1px solid transparent  !important;
+	border: 1px solid transparent !important;
 }
-div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.checkbox[fieldtype].focus, div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.checkbox[fieldtype]:focus{
-	border: 1px solid transparent  !important;
+
+div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.checkbox[fieldtype].focus,div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.checkbox[fieldtype]:focus
+	{
+	border: 1px solid transparent !important;
 }
-div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.checkbox.full[fieldtype]{
-	width: 100%!important;
-	min-width: 100%!important;
-	max-width: 100%!important;
-	height: 22px!important;
-	line-height:22px;
+
+div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.checkbox.full[fieldtype] {
+	width: 100% !important;
+	min-width: 100% !important;
+	max-width: 100% !important;
+	height: 22px !important;
+	line-height: 22px;
 	margin: 0;
 	padding: 0;
 	display: block;
 }
 
 /********************Scrollbar***********************/
-.linkedScrollSetX, .linkedScrollSetY, .innerScrollDiv, .linkedScrollDivY{
+.linkedScrollSetX,.linkedScrollSetY,.innerScrollDiv,.linkedScrollDivY {
 	width: 100%;
 	height: 100%;
-	
 }
 /* .linkedScrollSetX, .linkedScrollSetY{
 	position: relative !important;
@@ -94,112 +97,128 @@ div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.checkbox.full[fieldtype]{
 	width:-moz-calc(100% - 15px);
 	width:-webkit-calc(100% - 15px);
 } */
-.scrollBarX, .scrollBarY {
+.scrollBarX,.scrollBarY {
 	overflow: hidden;
-	border-radius:5px;
+	border-radius: 5px;
 }
-.sbwrapperX *,.sbwrapperY  *, .sbwrapperX,.sbwrapperY{
+
+.sbwrapperX *,.sbwrapperY  *,.sbwrapperX,.sbwrapperY {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	position: relative;
 	z-index: 1000;
 }
-.sbwrapperY{
+
+.sbwrapperY {
 	width: 15px;
 	height: 100%;
 	right: 0;
-	padding: 3px 1px!important;
+	padding: 3px 1px !important;
 	position: absolute;
 	top: 0;
 }
-.scrollBarY{
+
+.scrollBarY {
 	position: absolute;
 	overflow: hidden;
 	min-height: 70px;
-	height:calc(100% - 6px);
-	height:-moz-calc(100% - 6px);
-	height:-webkit-calc(100% - 6px);
+	height: calc(100% - 6px);
+	height: -moz-calc(100% - 6px);
+	height: -webkit-calc(100% - 6px);
 	width: 11px;
 }
-.sbwrapperX{
+
+.sbwrapperX {
 	width: 100%;
 	height: 15px;
 	bottom: 0;
-	padding: 1px 3px!important;
+	padding: 1px 3px !important;
 	position: absolute;
 }
-.scrollBarX{
+
+.scrollBarX {
 	position: absolute;
 	overflow: hidden;
 	min-width: 70px;
-	width:calc(100% - 6px);
-	width:-moz-calc(100% - 6px);
-	width:-webkit-calc(100% - 6px);
+	width: calc(100% - 6px);
+	width: -moz-calc(100% - 6px);
+	width: -webkit-calc(100% - 6px);
 	height: 11px;
 }
-.scrollBarY .handle{
-	width: 9px!important;
+
+.scrollBarY .handle {
+	width: 9px !important;
 	min-height: 70px;
 }
-.scrollBarX .handle{
-	height: 9px!important;
+
+.scrollBarX .handle {
+	height: 9px !important;
 	min-width: 70px;
 }
-.scrollBarX .handle,.scrollBarY .handle{
+
+.scrollBarX .handle,.scrollBarY .handle {
 	position: absolute;
-	border-radius:5px;
-	opacity:0.7;
-	filter:alpha(opacity=70);
+	border-radius: 5px;
+	opacity: 0.7;
+	filter: alpha(opacity = 70);
 	z-index: 1000;
 }
-.scrollBarX:hover .handle,.scrollBarY:hover .handle{
-	opacity:1;
-	filter:alpha(opacity=100)
+
+.scrollBarX:hover .handle,.scrollBarY:hover .handle {
+	opacity: 1;
+	filter: alpha(opacity = 100)
 }
+
 .innerScrollDiv {
 	position: relative;
 	float: left;
 }
+
 .scrollDivX {
 	position: absolute;
 	height: 11px;
 	width: 100%;
 	overflow-x: hidden;
 }
+
 .scrollDivY {
 	position: absolute;
 	width: 11px;
 	height: 100%;
 	overflow-y: hidden;
 }
-.scrollDivX .XContent{
-	height : 1px;
+
+.scrollDivX .XContent {
+	height: 1px;
 }
-.scrollDivY .YContent{
-	width : 1px;
+
+.scrollDivY .YContent {
+	width: 1px;
 }
-.sbwrapperX .handle:before{
+
+.sbwrapperX .handle:before {
 	position: absolute;
 	left: calc(50% - 4px);
 	left: -moz-calc(50% - 4px);
 	left: -webkit-calc(50% - 4px);
 	top: -6px;
 }
-.sbwrapperY .handle:before{
+
+.sbwrapperY .handle:before {
 	position: absolute;
 	top: calc(50% - 4px);
 	top: -moz-calc(50% - 4px);
 	top: -webkit-calc(50% - 4px);
 	left: 1px;
 }
-.linkedScrollDivX, .linkedScrollDivY{
+
+.linkedScrollDivX,.linkedScrollDivY {
 	overflow: hidden !important;
 }
 
-
 /*confirmation*/
-.confirmation{
+.confirmation {
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -207,34 +226,38 @@ div.tag.tag.tag.tag.tag.tag.tag.tag.tag.tag.checkbox.full[fieldtype]{
 	top: 0;
 }
 
-.confirmation .cWIndow{
+.confirmation .cWIndow {
 	width: 250px;
 	height: 70px;
- 	font-size: 12px;
- 	border-radius:5px;
- 	text-align: center;
- 	margin:  0 auto !important;
- 	position: relative;
- 	z-index: 10;
- 	top:35%;
- 	border-width: 2px 1px 1px 1px; 
- 	border-style: solid;
- 	opacity: 0.9;
-	filter: alpha(opacity=90);
+	font-size: 12px;
+	border-radius: 5px;
+	text-align: center;
+	margin: 0 auto !important;
+	position: relative;
+	z-index: 10;
+	top: 35%;
+	border-width: 2px 1px 1px 1px;
+	border-style: solid;
+	opacity: 0.9;
+	filter: alpha(opacity = 90);
 }
-.confirmation .cWIndow .message{
+
+.confirmation .cWIndow .message {
 	padding: 14px 0 10px 0 !important;
 }
-.confirmation .cWIndow .bwrapper{
+
+.confirmation .cWIndow .bwrapper {
 	width: 75px;
 	margin: 0 auto !important;
 }
-.confirmation .cWIndow .bwrapper .button{
+
+.confirmation .cWIndow .bwrapper .button {
 	width: auto !important;
 }
-._overlay{
+
+._overlay {
 	opacity: 0.8;
-	filter: alpha(opacity=80);
+	filter: alpha(opacity = 80);
 	left: 0;
 	position: absolute;
 	top: 0;
@@ -250,4 +273,3 @@ div.tag div.display{
 div.tag input.display{
 	display: none!important;
 }*/
-
