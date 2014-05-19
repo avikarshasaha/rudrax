@@ -8,7 +8,10 @@
 
 class Index extends AbstractHandler {
 
-	public function invokeHandler($viewModel) {
+	public function invokeHandler($viewModel,$header) {
+		$header->import('bootstrap');
+
+
 		if (isset($_REQUEST['uname'])) {
 			$username = $_POST['uname'];
 			$password = $_POST['pass'];
@@ -18,7 +21,7 @@ class Index extends AbstractHandler {
 		//Console::log($this->user->getToken(),$username,$password);
 		if ($this->user->isValid()) {
 			$viewModel->assign('token',$this->user->getToken());
-			 
+
 			$viewModel->assign('profile', $this->user->getProfile());
 
 			$viewModel->assign("Name", "Fred Irving Johnathan Bradley Peppergill", true);

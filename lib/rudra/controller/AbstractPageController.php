@@ -5,6 +5,7 @@
 */
 include_once (LIB_PATH . "/smarty/Smarty.class.php");
 include_once (RUDRA . "/controller/AbstractController.php");
+include_once (RUDRA . "/model/Header.php");
 
 class AbstractPageController extends AbstractController {
 
@@ -37,21 +38,28 @@ class AbstractPageController extends AbstractController {
 				$tpl->setCompileDir(get_include_path() . Config::get('TEMP_PATH'));
 				$tpl->setCacheDir(get_include_path() . Config::get('CACHE_PATH'));
 				// $tpl->testInstall(); exit;
-				$smarty->debugging = true;
+				//$tpl->debugging = TRUE;
 				$temp->setTemplate($tpl );
+				$header = new Header($tpl);
 				$view = RudraX::invokeMethodByReflectionClass($tempClass,$temp,'invokeHandler',array(
 					'tpl' => $tpl,
 					'viewModel' => $tpl,
-					'user' => $user
+					'user' => $user,
+					'header' => $header
 				));
 				//$view = $temp->invokeHandler($tpl );
 				if (! isset($view )) {
 					$view = $handlerName;
 				}
+
+				$tpl->assign('resource_path',Config::get('RESOURCE_PATH'));
+				$tpl->assign('css_files',$header->css);
+				$tpl->assign('script_files',$header->scripts);
 				$tpl->assign('body_file',$view . Config::get('TEMP_EXT'));
 				//echo get_include_path();
 				//$tpl->display($this->getViewPath() . $view . Config::get('TEMP_EXT'));
 				$tpl->display(get_include_path().RUDRA."/view/full.tpl");
+				
 			} else if ($tempClass->hasMethod("invoke" )) {
 				$view = $temp->invoke();
 				if (! isset($view )) {

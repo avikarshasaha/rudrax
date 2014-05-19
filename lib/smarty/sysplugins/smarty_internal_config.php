@@ -232,7 +232,7 @@ class Smarty_Internal_Config
 		}
 		$_config_vars = array();
 		include($this->getCompiledFilepath());
-		// copy global config vars
+
 		foreach ($_config_vars['vars'] as $variable => $value) {
 			if ($this->smarty->config_overwrite || !isset($scope_ptr->config_vars[$variable])) {
 				$scope_ptr->config_vars[$variable] = $value;
@@ -240,8 +240,15 @@ class Smarty_Internal_Config
 				$scope_ptr->config_vars[$variable] = array_merge((array) $scope_ptr->config_vars[$variable], (array) $value);
 			}
 		}
+
 		// scan sections
-		if (!empty($sections)) {
+		if($sections=='*'){
+			foreach ($_config_vars['sections'] as $key=>$value) {
+				if (isset($value['vars'])) {
+					$scope_ptr->config_vars[$key] = $value['vars'];
+				}
+			}
+		} else if (!empty($sections)) {
 			foreach ((array) $sections as $this_section) {
 				if (isset($_config_vars['sections'][$this_section])) {
 					foreach ($_config_vars['sections'][$this_section]['vars'] as $variable => $value) {

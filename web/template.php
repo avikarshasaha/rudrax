@@ -15,7 +15,7 @@ $RDb = RudraX::getDB('DB1');
 global $user;
 $user = new User();
 
-$handler = "index";
+$handler = "notemplate";
 if (isset($_REQUEST ['t'] ))
 	$handler = $_REQUEST ['t'];
 
@@ -24,14 +24,3 @@ $controller = new TemplateController();
 $controller->invoke($user, $handler );
 
 $RDb->close();
-
-/* IN_PROGRESS
-$NotClass = new ReflectionClass('TemplateController');
-$method = $NotClass->getMethod('testMethod');
-echo print_r($method->getParameters());
-
-foreach($method->getParameters() as $key => $val){
-	$cls = $val->getClass();
-	echo '\n<br/>'.$val->getName();
-}
-*/
