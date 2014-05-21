@@ -7,7 +7,7 @@ include_once (RUDRA . "/controller/AbstractNotificationController.php");
 
 class NotificationController extends AbstractNotificationController {
 
-	public function invokeHandler(AbstractUser $user, $handlerName) {
+	public function invokeHandler($handlerName) {
 		global $TunnelDB;
 		$this->_db = $TunnelDB;
 
@@ -17,7 +17,7 @@ class NotificationController extends AbstractNotificationController {
 
 		if ($NotClass->hasMethod($handlerName )) {
 			$reflectionMethod = $NotClass->getMethod($handlerName );
-			echo printf('%s(%s);',$callback,$reflectionMethod->invoke($this, $user, $handlerName ));
+			echo printf('%s(%s);',$callback,$reflectionMethod->invoke($this, $this->user, $handlerName ));
 		} else {
 
 		}

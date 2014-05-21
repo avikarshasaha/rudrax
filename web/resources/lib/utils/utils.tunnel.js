@@ -44,7 +44,7 @@ utils.define('utils.tunnel', function(tunnel) {
     };
     tunnel.longPoll = function(_cb_,handler,data) {
         $.ajax({
-            url : 'tunnel.php?@='+(handler || 'getLPollData'),
+            url : 'tunnel.php?do='+(handler || 'getLPollData'),
             type    : 'POST',
             dataType: 'jsonp',
             jsonpCallback: _cb_,

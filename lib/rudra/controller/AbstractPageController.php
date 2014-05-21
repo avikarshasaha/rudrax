@@ -17,7 +17,7 @@ class AbstractPageController extends AbstractController {
 		return "";
 	}
 
-	public function invokeHandler(AbstractUser $user, $handlerName) {
+	public function invokeHandler(User $user, $handlerName) {
 		$className = ucfirst($handlerName );
 		$user->validate();
 		include_once(RUDRA . "/handler/AbstractHandler.php");

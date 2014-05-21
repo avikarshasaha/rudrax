@@ -7,22 +7,32 @@
 include_once (RUDRA . "/model/AbstractUser.php");
 
 abstract class AbstractController {
+	
+	public $user;
+	
+	public function  __construct(){
+		$this->user = new User();
+	}
+	
+	public function getHandlerName() {
+		return $_GET[PAGE_PARAM];
+	}
 
-	public static function preRequest(AbstractUser $user, $handlerName) {
+	public function preRequest(AbstractUser $user, $handlerName) {
 		return true;
 	}
 
-	public static function postRequest(AbstractUser $user, $handlerName) {
+	public function postRequest(AbstractUser $user, $handlerName) {
 		return true;
 	}
 
-	public function invoke(AbstractUser $user, $handlerName) {
-		if ($this->preRequest($user, $handlerName )) {
-			$this->invokeHandler($user, $handlerName );
-			$this->postRequest($user, $handlerName );
+	public function invoke($handlerName) {
+		if ($this->preRequest($this->user, $handlerName )) {
+			$this->invokeHandler($this->user, $handlerName );
+			$this->postRequest($this->user, $handlerName );
 		}
 	}
 
-	abstract public function invokeHandler(AbstractUser $user, $handlerName);
+	abstract public function invokeHandler(User $user, $handlerName);
 
 }
