@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 utils.selectNamespace('product', function(product) {
-	utils.files.setResourcePath('resources');
+	//utils.files.setResourcePath('resources');
     product.init = function(){
     	product.t1 =   utils.template.load({
     		name : 'topbar',

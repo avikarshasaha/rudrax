@@ -6,7 +6,7 @@
 utils.selectNamespace('utils.files', function(files) {
 
     files.loaded_js = [];
-    files.rpath = "res";
+    files.rpath = RESOURCE_PATH || "res";
     files.setContext = function(context){
     	this.context = context;
     };
@@ -15,16 +15,16 @@ utils.selectNamespace('utils.files', function(files) {
     };
     files.loadJs = function(js){
     	files.load(this.rpath  + js);
-    }
+    };
     files.load = function(js){
         $('body').append('<jscript class="client" src="' + js + '"></jscript>');
         $('head').append('<script src="' + js + '" type="text/javascript"></script>');
-    }
+    };
     utils.require = function() {
         for (var i = 0; i < arguments.length; i++) {
             var js = arguments[i];
             if (!files.loaded_js[js]){
-            	files.loadJs(js)
+            	files.loadJs(js);
             }
             files.loaded_js[js] = js;
         }

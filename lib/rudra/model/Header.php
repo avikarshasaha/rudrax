@@ -28,11 +28,11 @@ class Header {
 	public function import($module){
 		if(isset($this->config[$module]) && !isset($dones[$module])){
 			$dones[$module] = true;
-			$this->add($this->config[$module]);
+			$this->add($module,$this->config[$module]);
 		}
 	}
 	
-	public function add($list){
+	public function add($module,$list){
 		if(isset($list['ON'])){
 			$modules = explode(',',$list['ON']);
 			foreach($modules as $key=>$module){
@@ -43,9 +43,9 @@ class Header {
 			if($key!='ON'){
 				$ext = strtolower(pathinfo($value, PATHINFO_EXTENSION));
 				if($ext=='js'){
-					$this->scripts[] = $value;
+					$this->scripts[$module.".".$key] = $value;
 				} else if($ext=='css'){
-					$this->css[] = $value;
+					$this->css[$module.".".$key] = $value;
 				}
 			}
 		}
