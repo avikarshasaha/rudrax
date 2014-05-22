@@ -11,14 +11,6 @@ error_reporting(E_ALL);
 require_once("../lib/rudra/rudrax.php");
 RudraX::setProjectConfiguration("../project.conf");
 
-/**
- *
- * @abstract - data-request
- *
- * @author <a href="mailto:lalit.tanwar07@gmail.com">Lalit Tanwar</a>
- * @version 1.3
-*/
-
 global $TunnelDB;
 $TunnelDB = RudraX::getDB('TUNNEL');
 

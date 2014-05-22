@@ -10,6 +10,8 @@ class Index extends AbstractHandler {
 
 	public function invokeHandler($viewModel,$header) {
 		$header->import('bootstrap');
+		$header->import('utils');
+		$header->import('product_login');
 
 
 		if (isset($_REQUEST['uname'])) {
@@ -38,7 +40,10 @@ class Index extends AbstractHandler {
 			$viewModel->assign("option_selected", "NE");
 			return "home/home";
 		} else {
-			return "login";
+			
+			
+			
+			return "sample/login";
 		}
 	}
 

@@ -45,7 +45,7 @@ class Header {
 				if($ext=='js'){
 					$this->scripts[] = $value;
 				} else if($ext=='css'){
-					$this->scripts[] = $value;
+					$this->css[] = $value;
 				}
 			}
 		}

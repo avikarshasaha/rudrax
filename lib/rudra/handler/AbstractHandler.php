@@ -46,3 +46,12 @@ class AbstractHandler {
 		return $this->tpl->newBlock($blockName);
 	}
 }
+
+class Nohandler extends AbstractHandler {
+
+	public function invokeHandler($viewModel,$header) {
+
+		return "empty";
+	}
+
+}

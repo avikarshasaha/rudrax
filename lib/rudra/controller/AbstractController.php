@@ -18,11 +18,11 @@ abstract class AbstractController {
 		return $_GET[PAGE_PARAM];
 	}
 
-	public function preRequest(AbstractUser $user, $handlerName) {
+	public function preRequest(User $user, $handlerName) {
 		return true;
 	}
 
-	public function postRequest(AbstractUser $user, $handlerName) {
+	public function postRequest(User $user, $handlerName) {
 		return true;
 	}
 

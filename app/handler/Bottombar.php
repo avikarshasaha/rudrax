@@ -6,11 +6,11 @@
 * and open the template in the editor.
 */
 
-class Topbar extends AbstractHandler {
+class Bottombar extends AbstractHandler {
 
 	public function invokeHandler(Smarty $tpl) {
 
-		return 'sample/topbar';
+		return 'sample/bottombar';
 	}
 
 }

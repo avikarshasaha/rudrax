@@ -12,7 +12,7 @@ RudraX::setProjectConfiguration("../project.conf");
 global $RDb;
 $RDb = RudraX::getDB('DB1');
 
-RudraX::invokeTemplate(function($t="index"){
+RudraX::invokeTemplate(function($t="nohandler"){
 	global $controller;
 	$controller = new TemplateController();
 	$controller->invoke($t);
