@@ -38,7 +38,7 @@ class AbstractTemplateController extends AbstractController {
 				$tpl->setCompileDir(get_include_path() . Config::get('TEMP_PATH'));
 				$tpl->setCacheDir(get_include_path() . Config::get('CACHE_PATH'));
 				// $tpl->testInstall(); exit;
-				$smarty->debugging = true;
+				$tpl->debugging = Config::get('SMARTY_DEBUG');
 				$temp->setTemplate($tpl);
 				$view = RudraX::invokeMethodByReflectionClass($tempClass,$temp,'invokeHandler',array(
 						'tpl' => $tpl,

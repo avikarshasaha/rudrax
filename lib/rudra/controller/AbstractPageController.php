@@ -38,7 +38,7 @@ class AbstractPageController extends AbstractController {
 				$tpl->setCompileDir(get_include_path() . Config::get('TEMP_PATH'));
 				$tpl->setCacheDir(get_include_path() . Config::get('CACHE_PATH'));
 				// $tpl->testInstall(); exit;
-				//$tpl->debugging = TRUE;
+				$tpl->debugging = Config::get('SMARTY_DEBUG');
 				$temp->setTemplate($tpl );
 				$header = new Header($tpl);
 				$view = RudraX::invokeMethodByReflectionClass($tempClass,$temp,'invokeHandler',array(
