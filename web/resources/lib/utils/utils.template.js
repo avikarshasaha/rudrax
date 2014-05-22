@@ -180,7 +180,7 @@ utils.define("utils.template", function(template) {
 		delete template.PENDING_TEMP[OBJ.template];
 		var nextOBJ = template.Q.get();
 		if (nextOBJ) {
-			template.load(nextOBJ);
+			template._load(nextOBJ);
 		}
 	};
 	template.Template  = function Template(OBJ){
@@ -192,10 +192,13 @@ utils.define("utils.template", function(template) {
 	template.load = function(_OBJ,arg0,arg1,arg2,arg3,arg4) {
 		var OBJ = new template.Template (_OBJ);
 		OBJ.template = OBJ.template || OBJ.name;
+		return template._load (OBJ,arg0,arg1,arg2,arg3,arg4)
+	}
+	template._load = function(OBJ,arg0,arg1,arg2,arg3,arg4) {
 		if (template.PENDING_TEMP[OBJ.template]) {
 			template.Q.put(OBJ);
 		} else {
-			//utils.require('/js/template/' + OBJ.template + ".js");
+			utils.require('/js/template/' + OBJ.template + ".js");
 			OBJ.sub = function(cb,a,b,c){
 				OBJ.__cb__ = OBJ.__cb__ || [];
 				OBJ.__cb__.push({
