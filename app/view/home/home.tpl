@@ -1,5 +1,4 @@
-{config_load file="test.conf" section="setup"} {include
-file="home/header.tpl" title=foo}
+{config_load file="test.conf" section="setup"} 
 <div id='topbar'></div>
 <PRE>
    <div style="float: left">

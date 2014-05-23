@@ -24,8 +24,10 @@ class RudraX {
 		define ( 'MODEL_PATH', $GLOBALS ['CONFIG']['MODEL_PATH'] );
 		define ( 'CONTROLLER_PATH', $GLOBALS ['CONFIG']['CONTROLLER_PATH'] );
 		define('Q',(isset($_REQUEST['q']) ? $_REQUEST['q'] : null));
-		define ( 'CONTEXT_PATH', strstr($_SERVER['REQUEST_URI'],Q,true));
-
+		
+		define ( 'CONTEXT_PATH', (
+			(Q==null) ? $_SERVER['REQUEST_URI'] : strstr($_SERVER['REQUEST_URI'],Q,true)
+		));
 		Console::set(true);
 	}
 	public static function includeTemplates(){

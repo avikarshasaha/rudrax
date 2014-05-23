@@ -52,11 +52,11 @@ class AbstractPageController extends AbstractController {
 					$view = $handlerName;
 				}
 
-				$tpl->assign('context_path',CONTEXT_PATH);
-				$tpl->assign('resource_path',Config::get('RESOURCE_PATH'));
-				$tpl->assign('css_files',$header->css);
-				$tpl->assign('script_files',$header->scripts);
-				$tpl->assign('body_file',$view . Config::get('TEMP_EXT'));
+				$tpl->assign('CONTEXT_PATH',CONTEXT_PATH);
+				$tpl->assign('RESOURCE_PATH',Config::get('RESOURCE_PATH'));
+				$tpl->assign('CSS_FILES',$header->css);
+				$tpl->assign('SCRIPT_FILES',$header->scripts);
+				$tpl->assign('BODY_FILES',$view . Config::get('TEMP_EXT'));
 				//echo get_include_path();
 				//$tpl->display($this->getViewPath() . $view . Config::get('TEMP_EXT'));
 				$tpl->display(get_include_path().RUDRA."/view/full.tpl");
