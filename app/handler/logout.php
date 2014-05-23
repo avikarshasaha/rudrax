@@ -12,9 +12,12 @@
  */
 class Logout extends AbstractHandler {
 
-	public function invokeHandler($tpl) {
+	public function invokeHandler($tpl,$header) {
+		$header->import('bootstrap');
+		$header->import('utils');
+		$header->import('product_login');
 		$this->user->unauth();
-		return 'login';
+		return 'sample/login';
 	}
 
 }

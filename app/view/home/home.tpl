@@ -1,4 +1,5 @@
 {config_load file="test.conf" section="setup"} 
+{include file="home/topbar.tpl" title=foo}
 <div id='topbar'></div>
 <PRE>
    <div style="float: left">
@@ -81,5 +82,3 @@ This is an example of the html_options function:
 		selected=$option_selected output=$option_output}
 	</select>
 </form>
-
-{include file="home/footer.tpl"}

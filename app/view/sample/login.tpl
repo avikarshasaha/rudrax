@@ -1,26 +1,13 @@
-<div class="topbar"></div>
-
-
 <div class="container">
-	<div class="row vertical-center-row">
-		<div class="col-lg-12">
-			<div class="row ">
-				<div
-					class=" loginbar col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4"
-					style="background: red; color: white">
-					
-					<form class="loginPanel" method="POST" action="{$CONTEXT_PATH}/home/">
-						<input type="text" name="uname" placeholder="Email Id" required /><b>{$CONTEXT_PATH}</b>
-						<input type="password" name="pass" placeholder="Password" required />
-						<input type="submit" value="Login" /> <label for="rember"><input
-							id="rember" type="checkbox">Remember This User</label>
-					</form>
 
-				</div>
-			</div>
-		</div>
-	</div>
+	<form class="form-signin" method="POST" action="{$CONTEXT_PATH}home/">
+		<h2 class="form-signin-heading">Please sign in</h2>
+		<input type="text" class="input-block-level"
+			placeholder="Email address" name="uname"> <input type="password"
+			class="input-block-level" placeholder="Password" name="pass"> <label
+			class="checkbox"> <input id="rember" type="checkbox" value="remember-me">
+			Remember me
+		</label>
+		<button class="btn btn-large btn-primary" type="submit">Sign in</button>
+	</form>
 </div>
-
-<div class="bottombar"></div>
-
