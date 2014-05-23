@@ -26,7 +26,7 @@ class RudraX {
 		define('Q',(isset($_REQUEST['q']) ? $_REQUEST['q'] : null));
 		
 		define ( 'CONTEXT_PATH', (
-			(Q==null) ? $_SERVER['REQUEST_URI'] : strstr($_SERVER['REQUEST_URI'],Q,true)
+			(Q==null) ? strstr($_SERVER['REQUEST_URI'],"?".$_SERVER['QUERY_STRING'],true) : strstr($_SERVER['REQUEST_URI'],Q,true)
 		));
 		Console::set(true);
 	}
