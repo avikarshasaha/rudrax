@@ -13,31 +13,33 @@ RudraX::setProjectConfiguration("../project.conf");
 global $RDb;
 $RDb = RudraX::getDB('DB1');
 
-RudraX::invokePage(function(){
+RudraX::invokePage(function($q){
 
 	RudraX::mapRequest("page/{p}",function($q,$f,$d,$p="index"){
 		echo $p;
-		//global $controller;
-		//$controller = new PageController();
-		//$controller->invoke($p);
-	});
-	RudraX::mapRequest("user/{u}",function($q,$u,$f,$d,$t="index"){
-		echo $u;
 		global $controller;
 		$controller = new PageController();
-		$controller->invoke($u);
+		$controller->invoke($p);
 	});
+	
 	RudraX::mapRequest("user/{u}/d/{d}/{f}",function($q,$u,$f,$d,$t="index"){
-		echo $u;
+		echo "user/{u}/d/{d}/{f}==>u=".$u;
 		//global $controller;
 		//$controller = new PageController();
 		//$controller->invoke($t);
+	});
+	
+	RudraX::mapRequest("user/{u}/",function($q,$u,$f,$d,$t="index"){
+		echo "user/{u}/==>u=".$u;
+		//global $controller;
+		//$controller = new PageController();
+		//$controller->invoke($u);
 	});
 
 	RudraX::mapRequest("",function($q,$p,$f,$d,$t="index"){
-		//global $controller;
-		//$controller = new PageController();
-		//$controller->invoke($t);
+		global $controller;
+		$controller = new PageController();
+		$controller->invoke($t);
 	});
 
 });

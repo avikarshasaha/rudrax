@@ -99,17 +99,15 @@ class RudraX {
 
 	public static function mapRequest ($mapping,$callback){
 		if(self::$REQUEST_MAPPED) return;
-		$matches = array();
-		preg_match_all('/{(.*?)}/', $mapping, $matches);
-		$mapper = $mapping;
-		foreach($matches[1] as $key=>$value){
-			$mapper = str_replace('{'.$value.'}','(?<'.$value.'>\w+)',$mapper);
-		}
+		$mapper = preg_replace('/\{(.*?)\}/m','(?P<$1>[\w\.]+)', str_replace('/','#',$mapping));
 		$varmap = array();
-		if(preg_match('/'.str_replace('/','#',$mapper).'/', str_replace('/','#',Q), $varmap)==1){
-		self::$REQUEST_MAPPED = TRUE;
-		return call_user_func_array($callback,
-				self::getArgsArray(new ReflectionFunction($callback),$varmap));
+		preg_match("/".$mapper."/",str_replace( array("/"),
+		array("#"),Q),$varmap);
+
+		if(count($varmap)>0){
+			self::$REQUEST_MAPPED = TRUE;
+			return call_user_func_array($callback,
+					self::getArgsArray(new ReflectionFunction($callback),$varmap));
 		}
 	}
 
