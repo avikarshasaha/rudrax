@@ -24,7 +24,7 @@ utils.selectNamespace('product', function(product) {
         utils.template.load({name : 'bottombar',parent : $('.bottombar')});
     };
     $(document).ready(function(){
-        product.init();
+       // product.init();
     });
 });
 

@@ -7,6 +7,7 @@ utils.selectNamespace('utils.files', function(files) {
 
     files.loaded_js = [];
     files.rpath = RESOURCE_PATH || "res";
+    files.context = CONTEXT_PATH || "";
     files.setContext = function(context){
     	this.context = context;
     };
@@ -14,7 +15,7 @@ utils.selectNamespace('utils.files', function(files) {
     	this.rpath = path;
     };
     files.loadJs = function(js){
-    	files.load(this.rpath  + js);
+    	files.load(this.context + this.rpath  + js);
     };
     files.load = function(js){
         $('body').append('<jscript class="client" src="' + js + '"></jscript>');

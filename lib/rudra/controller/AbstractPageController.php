@@ -52,6 +52,7 @@ class AbstractPageController extends AbstractController {
 					$view = $handlerName;
 				}
 
+				$tpl->assign('context_path',CONTEXT_PATH);
 				$tpl->assign('resource_path',Config::get('RESOURCE_PATH'));
 				$tpl->assign('css_files',$header->css);
 				$tpl->assign('script_files',$header->scripts);

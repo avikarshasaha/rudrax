@@ -6,6 +6,7 @@ class Config {
 	}
 }
 class RudraX {
+	public static $REQUEST_MAPPED = FALSE;
 	public static function setProjectConfiguration($file){
 		ob_start ();
 		session_start ();
@@ -22,6 +23,9 @@ class RudraX {
 		define ( 'DEBUG_ENABLED', $GLOBALS ['CONFIG']['DEBUG_ENABLED'] );
 		define ( 'MODEL_PATH', $GLOBALS ['CONFIG']['MODEL_PATH'] );
 		define ( 'CONTROLLER_PATH', $GLOBALS ['CONFIG']['CONTROLLER_PATH'] );
+		define('Q',(isset($_REQUEST['q']) ? $_REQUEST['q'] : null));
+		define ( 'CONTEXT_PATH', strstr($_SERVER['REQUEST_URI'],Q,true));
+
 		Console::set(true);
 	}
 	public static function includeTemplates(){
@@ -91,6 +95,22 @@ class RudraX {
 			include_once (RUDRA . "/controller/NotificationController.php");
 		}
 		return RudraX::invokePlug($callback);
+	}
+
+	public static function mapRequest ($mapping,$callback){
+		if(self::$REQUEST_MAPPED) return;
+		$matches = array();
+		preg_match_all('/{(.*?)}/', $mapping, $matches);
+		$mapper = $mapping;
+		foreach($matches[1] as $key=>$value){
+			$mapper = str_replace('{'.$value.'}','(?<'.$value.'>\w+)',$mapper);
+		}
+		$varmap = array();
+		if(preg_match('/'.str_replace('/','#',$mapper).'/', str_replace('/','#',Q), $varmap)==1){
+		self::$REQUEST_MAPPED = TRUE;
+		return call_user_func_array($callback,
+				self::getArgsArray(new ReflectionFunction($callback),$varmap));
+		}
 	}
 
 }

@@ -13,11 +13,25 @@ RudraX::setProjectConfiguration("../project.conf");
 global $RDb;
 $RDb = RudraX::getDB('DB1');
 
-RudraX::invokePage(function($t="index"){
-	global $controller;
-	$controller = new PageController();
-	$controller->invoke($t);
-});
+RudraX::invokePage(function(){
 
+	RudraX::mapRequest("page/{p}",function($q,$f,$d,$p="index"){
+		global $controller;
+		$controller = new PageController();
+		$controller->invoke($p);
+	});
+
+	RudraX::mapRequest("asa/user/{u}/d/{d}/{f}",function($q,$u,$f,$d,$t="index"){
+		global $controller;
+		$controller = new PageController();
+		$controller->invoke($t);
+	});
+
+	RudraX::mapRequest("",function($q,$p,$f,$d,$t="index"){
+		global $controller;
+		$controller = new PageController();
+		$controller->invoke($t);
+	});
+
+});
 $RDb->close();
-	
