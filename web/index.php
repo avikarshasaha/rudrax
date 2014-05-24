@@ -16,21 +16,22 @@ $RDb = RudraX::getDB('DB1');
 RudraX::invokePage(function($q){
 
 	RudraX::mapRequest("page/{p}",function($q,$f,$d,$p="index"){
-		echo $p;
+		//echo $p;
 		global $controller;
 		$controller = new PageController();
 		$controller->invoke($p);
 	});
 	
 	RudraX::mapRequest("user/{u}/d/{d}/{f}",function($q,$u,$f,$d,$t="index"){
-		echo "user/{u}/d/{d}/{f}==>u=".$u;
-		//global $controller;
-		//$controller = new PageController();
-		//$controller->invoke($t);
+		//echo "user/{u}/d/{d}/{f}==>u=".$u;
+		//echo "<br/>f=".$f;
+		global $controller;
+		$controller = new PageController();
+		$controller->invoke($t);
 	});
 	
 	RudraX::mapRequest("user/{u}/",function($q,$u,$f,$d,$t="index"){
-		echo "user/{u}/==>u=".$u;
+		//echo "user/{u}/==>u=".$u;
 		//global $controller;
 		//$controller = new PageController();
 		//$controller->invoke($u);

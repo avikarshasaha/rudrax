@@ -5,12 +5,44 @@ class Config {
 		return $GLOBALS['CONFIG'][$section];
 	}
 }
+class HttpRequest {
+	private static $request;
+	private $map = array();
+	public function get($key){
+		if(isset($this->map[$key])){
+			return $this->map[$key];
+		} else if(isset($_REQUEST[$key])){
+			return $_REQUEST[$key];
+		} else {
+			return NULL;
+		}
+	}
+	public function set($key,$value){
+		$this->map[$key] = $value;
+		return $this;
+	}
+	public function getAllParams(){
+		return $this->map;
+	}
+	public function loadParams($params){
+		$this->map = array_merge($this->map,$params);
+		return $this;
+	}
+	public static function getInstance(){
+		if(!isset(self::$request)){
+			self::$request = new HttpRequest();
+		}
+		return self::$request;
+	}
+}
+
+
 class RudraX {
 	public static $REQUEST_MAPPED = FALSE;
 	public static function setProjectConfiguration($file){
 		ob_start ();
 		session_start ();
-		$GLOBALS ['CONFIG'] = parse_ini_file ($file, true );
+		$GLOBALS ['CONFIG'] = parse_ini_file ($file, TRUE );
 		set_include_path ($GLOBALS['CONFIG']['WORK_DIR']);
 		define("BASE_PATH", dirname(__FILE__) );
 		define("LOG_PATH", $GLOBALS ['CONFIG']['LOG_PATH']);
@@ -23,12 +55,12 @@ class RudraX {
 		define ( 'DEBUG_ENABLED', $GLOBALS ['CONFIG']['DEBUG_ENABLED'] );
 		define ( 'MODEL_PATH', $GLOBALS ['CONFIG']['MODEL_PATH'] );
 		define ( 'CONTROLLER_PATH', $GLOBALS ['CONFIG']['CONTROLLER_PATH'] );
-		define('Q',(isset($_REQUEST['q']) ? $_REQUEST['q'] : null));
-		
+		define('Q',(isset($_REQUEST['q']) ? $_REQUEST['q'] : NULL));
+
 		define ( 'CONTEXT_PATH', (
-			(Q==null) ? strstr($_SERVER['REQUEST_URI'],"?".$_SERVER['QUERY_STRING'],true) : strstr($_SERVER['REQUEST_URI'],Q,true)
+		(Q==NULL) ? strstr($_SERVER['REQUEST_URI'],"?".$_SERVER['QUERY_STRING'],TRUE) : strstr($_SERVER['REQUEST_URI'],Q,true)
 		));
-		Console::set(true);
+		Console::set(TRUE);
 	}
 	public static function includeTemplates(){
 		self::includeUser();
@@ -61,10 +93,16 @@ class RudraX {
 	}
 	public static function getArgsArray($reflectionMethod,$argArray){
 		$arr = array();
+		$request =  HttpRequest::getInstance();
 		foreach($reflectionMethod->getParameters() as $key => $val){
-			$arr[$val->getName()] = isset($argArray[$val->getName()]) ?
-			$argArray[$val->getName()] : (isset($_REQUEST[$val->getName()])
-					? $_REQUEST[$val->getName()] : ($val->isDefaultValueAvailable()  ? $val->getDefaultValue() : NULL));
+			$arr[$val->getName()] = isset($argArray[$val->getName()])
+			? $argArray[$val->getName()]
+			:(($request->get($val->getName()))
+					? $request->get($val->getName())
+					:($val->isDefaultValueAvailable()
+							? $val->getDefaultValue() : NULL
+					)
+			);
 		}
 		return $arr;
 	}
@@ -106,10 +144,13 @@ class RudraX {
 		preg_match("/".$mapper."/",str_replace( array("/"),
 		array("#"),Q),$varmap);
 
+		$request =  HttpRequest::getInstance()->loadParams($varmap);
+		$argArray = self::getArgsArray(new ReflectionFunction($callback),$varmap);
+		$request->loadParams($argArray);
+
 		if(count($varmap)>0){
 			self::$REQUEST_MAPPED = TRUE;
-			return call_user_func_array($callback,
-					self::getArgsArray(new ReflectionFunction($callback),$varmap));
+			return call_user_func_array($callback, $argArray);
 		}
 	}
 
@@ -119,4 +160,5 @@ class DBUtils {
 		return RudraX::getDB($configname);
 	}
 }
+
 ?>

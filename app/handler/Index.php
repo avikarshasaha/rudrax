@@ -8,11 +8,10 @@
 
 class Index extends AbstractHandler {
 
-	public function invokeHandler($viewModel,$header) {
+	public function invokeHandler($viewModel,$header,$f) {
 		$header->import('bootstrap');
 		$header->import('utils');
 		$header->import('product_login');
-
 
 		if (isset($_REQUEST['uname'])) {
 			$username = $_POST['uname'];
@@ -40,9 +39,6 @@ class Index extends AbstractHandler {
 			$viewModel->assign("option_selected", "NE");
 			return "home/home";
 		} else {
-			
-			
-			
 			return "sample/login";
 		}
 	}
